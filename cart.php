@@ -1,10 +1,9 @@
-<?php include_once('include/head.php') ?>
+<?php include_once 'include/head.php' ?>
 <body>
 
+<?php include_once 'include/preloader.php' ?> 
 
-<?php include_once('include/header.php') ?>
-
-<?php include_once('include/preloader.php') ?>
+<?php include_once 'include/header.php' ?>
 
 <div class="breadcrumbs">
     <div class="container">
@@ -16,8 +15,8 @@
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-nav">
-                    <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                    <li><a href="index.html">Shop</a></li>
+                    <li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
+                    <li><a href="index.php">Shop</a></li>
                     <li>Cart</li>
                 </ul>
             </div>
@@ -53,10 +52,10 @@
             <div class="cart-single-list">
                 <div class="row align-items-center">
                     <div class="col-lg-1 col-md-1 col-12">
-                        <a href="product-details.html"><img src="assets/images/cart/01.jpg" alt="#"></a>
+                        <a href="product-details.php"><img src="assets/images/cart/01.jpg" alt="#"></a>
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
-                        <h5 class="product-name"><a href="product-details.html">
+                        <h5 class="product-name"><a href="product-details.php">
                             Canon EOS M50 Mirrorless Camera</a></h5>
                         <p class="product-des">
                             <span><em>Type:</em> Mirrorless</span>
@@ -89,10 +88,10 @@
             <div class="cart-single-list">
                 <div class="row align-items-center">
                     <div class="col-lg-1 col-md-1 col-12">
-                        <a href="product-details.html"><img src="assets/images/cart/02.jpg" alt="#"></a>
+                        <a href="product-details.php"><img src="assets/images/cart/02.jpg" alt="#"></a>
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
-                        <h5 class="product-name"><a href="product-details.html">
+                        <h5 class="product-name"><a href="product-details.php">
                             Apple iPhone X 256 GB Space Gray</a></h5>
                         <p class="product-des">
                             <span><em>Memory:</em> 256 GB</span>
@@ -125,10 +124,10 @@
             <div class="cart-single-list">
                 <div class="row align-items-center">
                     <div class="col-lg-1 col-md-1 col-12">
-                        <a href="product-details.html"><img src="assets/images/cart/03.jpg" alt="#"></a>
+                        <a href="product-details.php"><img src="assets/images/cart/03.jpg" alt="#"></a>
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
-                        <h5 class="product-name"><a href="product-details.html">HP LaserJet Pro Laser Printer</a></h5>
+                        <h5 class="product-name"><a href="product-details.php">HP LaserJet Pro Laser Printer</a></h5>
                         <p class="product-des">
                             <span><em>Type:</em> Laser</span>
                             <span><em>Color:</em> White</span>
@@ -183,8 +182,8 @@
                                     <li class="last">You Pay<span>$2531.00</span></li>
                                 </ul>
                                 <div class="button">
-                                    <a href="checkout.html" class="btn">Checkout</a>
-                                    <a href="product-grids.html" class="btn btn-alt">Continue shopping</a>
+                                    <a href="checkout.php" class="btn">Checkout</a>
+                                    <a href="product-grids.php" class="btn btn-alt">Continue shopping</a>
                                 </div>
                             </div>
                         </div>
@@ -195,10 +194,6 @@
     </div>
 </div>
 
-<?php include_once('include/footer.php') ?>
+<?php include_once 'include/footer.php'  ?>
 
-<a href="#" class="scroll-top">
-<i class="lni lni-chevron-up"></i>
-</a>
-
-<?php include_once('include/script.php') ?>
+<?php include_once 'include/script.php' ?>

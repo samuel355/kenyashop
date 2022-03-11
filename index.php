@@ -1,9 +1,9 @@
-<?php include_once('include/head.php') ?>
+<?php include_once 'include/head.php' ?>
 <body>
 
-<?php include_once('include/preloader.php') ?> 
+<?php include_once 'include/preloader.php' ?> 
 
-<?php include_once('include/header.php') ?>
+<?php include_once 'include/header.php' ?>
 
 <section class="hero-area">
     <div class="container">
@@ -886,8 +886,9 @@
 
 <?php include_once "include/footer.php" ?>
 
+
 <a href="#" class="scroll-top">
-<i class="lni lni-chevron-up"></i>
+    <i class="lni lni-chevron-up"></i>
 </a>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/bootstrap.min.js"></script>
@@ -967,5 +968,5 @@
         setInterval(timer, 1000);
     </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"67c13e077b6e06cb","version":"2021.7.0","r":1,"token":"93dd3b16eaea413cbf84c7c6b5a1817a","si":10}'></script>
+<script src="assets/js/stickytop.js"></script>
 </body>
-</html>

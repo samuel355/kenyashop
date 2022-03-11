@@ -1,9 +1,9 @@
-<?php include_once('include/head.php') ?>
+<?php include_once 'include/head.php' ?>
 <body>
 
-<?php include_once('include/preloader.php') ?>
+<?php include_once 'include/preloader.php' ?> 
 
-<?php include_once('include/header.php') ?>
+<?php include_once 'include/header.php' ?>
 
 <div class="breadcrumbs">
   	<div class="container">
@@ -15,8 +15,8 @@
 			</div>
 			<div class="col-lg-6 col-md-6 col-12">
 				<ul class="breadcrumb-nav">
-					<li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-					<li><a href="index.html">Blog</a></li>
+					<li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
+					<li><a href="index.php">Blog</a></li>
 					<li>Blog Single Sidebar</li>
 				</ul>
 			</div>
@@ -36,7 +36,7 @@
 							</div>
 							<div class="meta-information">
 								<h2 class="post-title">
-									<a href="blog-single.html">Smartphones in Every Day Life.</a>
+									<a href="blog-single.php">Smartphones in Every Day Life.</a>
 								</h2>
 								<ul class="meta-info">
 									<li>
@@ -294,30 +294,30 @@
 						<div class="popular-feed-loop">
 							<div class="single-popular-feed">
 								<div class="feed-desc">
-									<a class="feed-img" href="blog-single-sidebar.html">
+									<a class="feed-img" href="blog-single-sidebar.php">
 										<img src="assets/images/blog/blog-sidebar-1.jpg" alt="#">
 									</a>
-									<h6 class="post-title"><a href="blog-single-sidebar.html">What information is
+									<h6 class="post-title"><a href="blog-single-sidebar.php">What information is
 										needed for shipping?</a></h6>
 									<span class="time"><i class="lni lni-calendar"></i> 05th Nov 2023</span>
 								</div>
 							</div>
 							<div class="single-popular-feed">
 								<div class="feed-desc">
-									<a class="feed-img" href="blog-single-sidebar.html">
+									<a class="feed-img" href="blog-single-sidebar.php">
 										<img src="assets/images/blog/blog-sidebar-2.jpg" alt="#">
 									</a>
-									<h6 class="post-title"><a href="blog-single-sidebar.html">Interesting fact about
+									<h6 class="post-title"><a href="blog-single-sidebar.php">Interesting fact about
 										gaming consoles</a></h6>
 									<span class="time"><i class="lni lni-calendar"></i> 24th March 2023</span>
 								</div>
 							</div>
 							<div class="single-popular-feed">
 								<div class="feed-desc">
-									<a class="feed-img" href="blog-single-sidebar.html">
+									<a class="feed-img" href="blog-single-sidebar.php">
 										<img src="assets/images/blog/blog-sidebar-3.jpg" alt="#">
 									</a>
-									<h6 class="post-title"><a href="blog-single-sidebar.html">Electronics,
+									<h6 class="post-title"><a href="blog-single-sidebar.php">Electronics,
 										instrumentation & control engineering </a></h6>
 									<span class="time"><i class="lni lni-calendar"></i> 30th Jan 2023</span>
 								</div>
@@ -362,11 +362,6 @@
 		</div>
 </section>
 
-<?php include_once('include/footer.php') ?>
+<?php include_once 'include/footer.php' ?>
 
-
-<a href="#" class="scroll-top">
-<i class="lni lni-chevron-up"></i>
-</a>
-
-<?php include_once('include/script.php') ?>
+<?php include_once 'include/script.php' ?>

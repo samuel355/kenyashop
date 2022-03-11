@@ -1,9 +1,9 @@
-<?php include_once('include/head.php') ?>
+<?php include_once 'include/head.php' ?>
 <body>
-<?php include_once('include/preloader.php') ?>
 
+<?php include_once 'include/preloader.php' ?> 
 
-<?php include_once('include/header.php') ?>
+<?php include_once 'include/header.php' ?>
 
 <div class="breadcrumbs">
     <div class="container">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-nav">
-                    <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
+                    <li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
                     <li>FAQ</li>
                 </ul>
             </div>
@@ -135,11 +135,7 @@
         </div>
     </div>
 </section>
-<?php include_once('include/footer.php') ?>
+<?php include_once 'include/footer.php'  ?>
 
 
-<a href="#" class="scroll-top">
-<i class="lni lni-chevron-up"></i>
-</a>
-
-<?php include_once('include/script.php') ?>
+<?php include_once 'include/script.php' ?>

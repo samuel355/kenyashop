@@ -13,7 +13,8 @@ body {
     font-style: normal;
     color: #888;
     overflow-x: hidden;
-    font-size: 14px
+    font-size: 14px;
+    overflow-x: hidden;
 }
 
 p {
@@ -1168,7 +1169,7 @@ ol {
     box-shadow: 0 1rem 3rem rgba(35, 38, 45, .15)!important;
     -webkit-transform: translate3d(0, -5px, 0);
     transform: translate3d(0, -5px, 0);
-    background-color: #081828
+    background: var(--primary-color);
 }
 
 .overlay {
@@ -8039,6 +8040,10 @@ blockquote span {
     }
 }
 
-.header-bottom {
-    position: sticky;
+.stickyTop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
 }

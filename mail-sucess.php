@@ -1,6 +1,6 @@
-<?php include_once('include/head.php') ?>
+<?php include_once 'include/head.php' ?>
 <body>
-<?php include_once('include/preloader.php') ?>
+<?php include_once 'include/preloader.php' ?>
 
 
 <div class="maill-success">
@@ -12,7 +12,7 @@
                     <h2>Your Mail Sent Successfully</h2>
                     <p>Thanks for contacting with us, We will get back to you asap.</p>
                     <div class="button">
-                        <a href="index.html" class="btn">Back to Home</a>
+                        <a href="index.php" class="btn">Back to Home</a>
                     </div>
                 </div>
             </div>
@@ -34,4 +34,4 @@
   </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"67c185e58d3006fb","version":"2021.7.0","r":1,"token":"93dd3b16eaea413cbf84c7c6b5a1817a","si":10}'></script>
 </body>
-</html>
+<.php>

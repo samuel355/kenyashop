@@ -1,9 +1,9 @@
-<?php include_once('include/head.php') ?>
+<?php include_once 'include/head.php' ?>
 <body>
 
-<?php include_once('include/preloader.php') ?>
+<?php include_once 'include/preloader.php' ?>
 
-<?php include_once('include/header.php') ?>
+<?php include_once 'include/header.php'  ?>
 
 <div class="breadcrumbs">
     <div class="container">
@@ -15,8 +15,8 @@
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-nav">
-                    <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
+                    <li><a href="index.php">Blog</a></li>
                     <li>Blog Grid Sidebar</li>
                 </ul>
             </div>
@@ -33,14 +33,14 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-blog">
                             <div class="blog-img">
-                                <a href="blog-single-sidebar.html">
+                                <a href="blog-single-sidebar.php">
                                     <img src="assets/images/blog/blog-1.jpg" alt="#">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <a class="category" href="javascript:void(0)">eCommerce</a>
                                 <h4>
-                                    <a href="blog-single-sidebar.html">What information is needed for shipping?</a>
+                                    <a href="blog-single-sidebar.php">What information is needed for shipping?</a>
                                 </h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt.</p>
@@ -54,14 +54,14 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-blog">
                             <div class="blog-img">
-                                <a href="blog-single-sidebar.html">
+                                <a href="blog-single-sidebar.php">
                                     <img src="assets/images/blog/blog-2.jpg" alt="#">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <a class="category" href="javascript:void(0)">Gaming</a>
                                 <h4>
-                                    <a href="blog-single-sidebar.html">Interesting fact about gaming consoles</a>
+                                    <a href="blog-single-sidebar.php">Interesting fact about gaming consoles</a>
                                 </h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt.</p>
@@ -75,14 +75,14 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-blog">
                             <div class="blog-img">
-                                <a href="blog-single-sidebar.html">
+                                <a href="blog-single-sidebar.php">
                                     <img src="assets/images/blog/blog-3.jpg" alt="#">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <a class="category" href="javascript:void(0)">Electronic</a>
                                 <h4>
-                                    <a href="blog-single-sidebar.html">Electronics, instrumentation & control
+                                    <a href="blog-single-sidebar.php">Electronics, instrumentation & control
                                     engineering
                                     </a>
                                 </h4>
@@ -98,14 +98,14 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-blog">
                             <div class="blog-img">
-                                <a href="blog-single-sidebar.html">
+                                <a href="blog-single-sidebar.php">
                                     <img src="assets/images/blog/blog-1.jpg" alt="#">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <a class="category" href="javascript:void(0)">eCommerce</a>
                                 <h4>
-                                    <a href="blog-single-sidebar.html">What information is needed for shipping?</a>
+                                    <a href="blog-single-sidebar.php">What information is needed for shipping?</a>
                                 </h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             i       ncididunt.</p>
@@ -119,14 +119,14 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-blog">
                             <div class="blog-img">
-                                <a href="blog-single-sidebar.html">
+                                <a href="blog-single-sidebar.php">
                                     <img src="assets/images/blog/blog-2.jpg" alt="#">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <a class="category" href="javascript:void(0)">Gaming</a>
                                 <h4>
-                                    <a href="blog-single-sidebar.html">Interesting fact about gaming consoles</a>
+                                    <a href="blog-single-sidebar.php">Interesting fact about gaming consoles</a>
                                 </h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt.</p>
@@ -140,14 +140,14 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-blog">
                             <div class="blog-img">
-                                <a href="blog-single-sidebar.html">
+                                <a href="blog-single-sidebar.php">
                                     <img src="assets/images/blog/blog-3.jpg" alt="#">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <a class="category" href="javascript:void(0)">Electronic</a>
                                 <h4>
-                                    <a href="blog-single-sidebar.html">Electronics, instrumentation & control
+                                    <a href="blog-single-sidebar.php">Electronics, instrumentation & control
                                     engineering
                                     </a>
                                 </h4>
@@ -188,10 +188,10 @@
                         <div class="popular-feed-loop">
                             <div class="single-popular-feed">
                                 <div class="feed-desc">
-                                    <a class="feed-img" href="blog-single-sidebar.html">
+                                    <a class="feed-img" href="blog-single-sidebar.php">
                                         <img src="assets/images/blog/blog-sidebar-1.jpg" alt="#">
                                     </a>
-                                    <h6 class="post-title"><a href="blog-single-sidebar.html">What information is
+                                    <h6 class="post-title"><a href="blog-single-sidebar.php">What information is
                                     needed for shipping?</a></h6>
                                     <span class="time"><i class="lni lni-calendar"></i> 05th Nov 2023</span>
                                 </div>
@@ -199,10 +199,10 @@
                             
                             <div class="single-popular-feed">
                                 <div class="feed-desc">
-                                    <a class="feed-img" href="blog-single-sidebar.html">
+                                    <a class="feed-img" href="blog-single-sidebar.php">
                                         <img src="assets/images/blog/blog-sidebar-2.jpg" alt="#">
                                     </a>
-                                    <h6 class="post-title"><a href="blog-single-sidebar.html">Interesting fact about
+                                    <h6 class="post-title"><a href="blog-single-sidebar.php">Interesting fact about
                                     gaming consoles</a></h6>
                                     <span class="time"><i class="lni lni-calendar"></i> 24th March 2023</span>
                                 </div>
@@ -210,10 +210,10 @@
 
                             <div class="single-popular-feed">
                                 <div class="feed-desc">
-                                    <a class="feed-img" href="blog-single-sidebar.html">
+                                    <a class="feed-img" href="blog-single-sidebar.php">
                                         <img src="assets/images/blog/blog-sidebar-3.jpg" alt="#">
                                     </a>
-                                    <h6 class="post-title"><a href="blog-single-sidebar.html">Electronics,
+                                    <h6 class="post-title"><a href="blog-single-sidebar.php">Electronics,
                                     instrumentation & control engineering </a></h6>
                                     <span class="time"><i class="lni lni-calendar"></i> 30th Jan 2023</span>
                                 </div>
@@ -257,11 +257,7 @@
         </div>
     </div>
 </section>
-<?php include_once('include/footer.php') ?>
+<?php include_once 'include/footer.php'  ?>
 
 
-<a href="#" class="scroll-top">
-<i class="lni lni-chevron-up"></i>
-</a>
-
-<?php include_once('include/script.php') ?>
+<?php include_once 'include/script.php' ?>
