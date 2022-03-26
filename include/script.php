@@ -3,6 +3,9 @@
     <i class="lni lni-chevron-up"></i>
 </a>
 
+<script src="node_modules/jquery/dist/jquery.min.js" ></script>
+<script src="node_modules/popper.js/dist/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/tiny-slider.js"></script>
 <script src="assets/js/glightbox.min.js"></script>
@@ -92,7 +95,7 @@
 </script>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"67c13e077b6e06cb","version":"2021.7.0","r":1,"token":"93dd3b16eaea413cbf84c7c6b5a1817a","si":10}'></script>
-<script src="javascript/register.js"></script>
 <script src="assets/js/stickytop.js"></script>
+<script src="assets/js/dropdown-user.js"></script>
 </body>
 </html>

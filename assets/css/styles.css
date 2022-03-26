@@ -1754,14 +1754,16 @@ ol {
 
 .header .navbar-cart .cart-items:hover .shopping-item {
     opacity: 1;
-    visibility: visible
+    visibility: visible;
 }
 
 .header .navbar-cart .cart-items .shopping-item {
     position: absolute;
-    top: 72px;
+    top: 70px;
     right: 0;
     width: 300px;
+    height: 50vh;
+    overflow: scroll;
     background: #fff;
     padding: 20px 25px;
     -webkit-transition: all .3s ease 0s;
@@ -1771,7 +1773,7 @@ ol {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .137);
     box-shadow: 0 0 5px rgba(0, 0, 0, .137);
     opacity: 0;
-    visibility: hidden
+    visibility: hidden;
 }
 
 @media(max-width:767px) {
@@ -2257,7 +2259,6 @@ ol {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-right: 1px solid #eee;
     margin-right: 40px;
     padding-right: 112px;
     cursor: pointer
@@ -8046,4 +8047,36 @@ blockquote span {
     width: 100%;
     background: white;
     z-index: 999;
+}
+
+.user-dropdown {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    box-shadow: 2px 2px 14px gray;
+    z-index: 999;
+}
+
+.user-dropdown li a {
+    color: #e63946 !important;
+    padding: 6px;
+    margin: 2px;
+    width: 100%;
+}
+
+.user-dropdown li a:hover {
+    color: rgb(27, 27, 27) !important;
+    background: #e63946 !important;
+}
+
+.user-dropdown-show {
+    display: none;
+    transition: all ease-in;
+}
+
+.user-dropdown-button {
+    position: relative;
 }

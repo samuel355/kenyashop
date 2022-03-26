@@ -32,27 +32,18 @@
                     <div class="product-images">
                         <main id="gallery">
                             <div class="main-img">
-                                <img src="assets/images/product-details/01.jpg" id="current" alt="#">
-                            </div>
-                            <div class="images">
-                                <img src="assets/images/product-details/01.jpg" class="img" alt="#">
-                                <img src="assets/images/product-details/02.jpg" class="img" alt="#">
-                                <img src="assets/images/product-details/03.jpg" class="img" alt="#">
-                                <img src="assets/images/product-details/04.jpg" class="img" alt="#">
-                                <img src="assets/images/product-details/05.jpg" class="img" alt="#">
+                                <img style="width: 100%; height: 100%; object-fit: contain;" src="images/products/p1.jpeg" id="current" alt="#">
                             </div>
                         </main>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="product-info">
-                        <h2 class="title">GoPro Karma Camera Drone</h2>
-                        <p class="category"><i class="lni lni-tag"></i> Drones:<a href="javascript:void(0)">Action
-                        cameras</a></p>
-                        <h3 class="price">$850<span>$945</span></h3>
-                        <p class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt
-                        ut labore et dolore magna aliqua.</p>
+                        <h2 class="title">Selected Product Title</h2>
+                        <p class="category"><i class="lni lni-tag"></i> Women Bag:<a href="javascript:void(0)">
+                            Quality Women Bag </a></p>
+                        <h3 class="price">GHS. 850<span>GHS. 945</span></h3>
+                        <p class="info-text">Quality and Affordable designer bag for women</p>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group color-option">
@@ -76,16 +67,6 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label for="color">Battery capacity</label>
-                                    <select class="form-control" id="color">
-                                        <option>5100 mAh</option>
-                                        <option>6200 mAh</option>
-                                        <option>8000 mAh</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group quantity">
                                     <label for="color">Quantity</label>
                                     <select class="form-control">
@@ -103,11 +84,6 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="button cart-button">
                                         <button class="btn" style="width: 100%;">Add to Cart</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-12">
-                                    <div class="wish-button">
-                                        <button class="btn"><i class="lni lni-reload"></i> Compare</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
@@ -365,4 +341,6 @@
         });
     </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"67c18a42ce693f1f","version":"2021.7.0","r":1,"token":"93dd3b16eaea413cbf84c7c6b5a1817a","si":10}'></script>
+<script src="assets/js/stickytop.js"></script>
+<script src="actions.js"></script>
 </body>

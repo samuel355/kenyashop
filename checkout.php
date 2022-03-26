@@ -1,4 +1,10 @@
 <?php include_once 'include/head.php' ?>
+<?php
+    session_start();
+    if(!isset($_SESSION['uid'])){
+        header("location: login.php");
+    }
+?>
 <body>
 
 <?php include_once 'include/preloader.php' ?> 
@@ -329,31 +335,26 @@
                         <div class="sub-total-price">
                             <div class="total-price">
                                 <p class="value">Subotal Price:</p>
-                                <p class="price">$144.00</p>
+                                <p class="price">GHS. 144.00</p>
                             </div>
                             <div class="total-price shipping">
                                 <p class="value">Subotal Price:</p>
-                                <p class="price">$10.50</p>
+                                <p class="price">GHS. 10.50</p>
                             </div>
                             <div class="total-price discount">
                                 <p class="value">Subotal Price:</p>
-                                <p class="price">$10.00</p>
+                                <p class="price">GHS. 10.00</p>
                             </div>
                         </div>
                         <div class="total-payable">
                             <div class="payable-price">
                                 <p class="value">Subotal Price:</p>
-                                <p class="price">$164.50</p>
+                                <p class="price">GHS. 164.50</p>
                             </div>
                         </div>
                         <div class="price-table-btn button">
                             <a href="javascript:void(0)" class="btn btn-alt">Checkout</a>
                         </div>
-                    </div>
-                    <div class="checkout-sidebar-banner mt-30">
-                        <a href="product-grids.php">
-                            <img src="assets/images/banner/banner.jpg" alt="#">
-                        </a>
                     </div>
                 </div>
             </div>
@@ -363,5 +364,5 @@
 
 <?php include_once 'include/footer.php'  ?>
 
-
 <?php include_once 'include/script.php' ?>
+<script src="actions.js"></script>

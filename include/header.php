@@ -33,17 +33,44 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="top-end">
-                        <div class="user">
-                            <i class="lni lni-user"></i><a class="text-white" href="#"> Hello Kenya</a>
-                        </div>
-                        <ul class="user-login">
-                            <li>
-                                <a href="login.php">Sign In</a>
-                            </li>
-                            <li>
-                                <a href="register.php">Register</a>
-                            </li>
-                        </ul>
+                        <?php
+                        
+                            include_once "php/config.php";
+                            if(isset($_SESSION['uid'])){
+                                $sql = "SELECT first_name FROM user_info WHERE user_id='$_SESSION[uid]'";
+                                $query = mysqli_query($con,$sql);
+                                $row=mysqli_fetch_array($query);
+
+                                echo '
+                                    <ul class="user-login">
+                                        <li class="text-white">
+                                            <i class="lni lni-user text-white" ></i>
+                                            <a class="text-white user-dropdown-button" id="user-dropdown" href="#">Hello '.$row["first_name"].'</a>
+                                            <ul class="user-dropdown user-dropdown-show">
+                                                <li><a href="#">Account</a></li>
+                                                <li><a href="#">Orders</a></li>
+                                                <li><a href="logout.php">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                ';
+                            }else{
+                                echo '
+                                    <ul class="user-login">
+                                        <li>
+                                            <a href="login.php">Sign In</a>
+                                        </li>
+                                        <li>
+                                            <a href="register.php">Register</a>
+                                        </li>
+                                    </ul>
+                                ';
+                            }
+                        
+                        ?>
+                        
+                        
+                      
                     </div>
                 </div>
             </div>
@@ -103,44 +130,16 @@
                             <div class="cart-items">
                                 <a href="javascript:void(0)" class="main-btn">
                                     <i class="lni lni-cart"></i>
-                                    <span class="total-items">2</span>
+                                    <span class="total-items cart-badge qty">0</span>
                                 </a>
 
                                 <div class="shopping-item">
-                                    <div class="dropdown-cart-header">
-                                        <span>2 Items</span>
-                                        <a href="cart.php">View Cart</a>
-                                    </div>
-                                    <ul class="shopping-list">
-                                        <li>
-                                            <a href="javascript:void(0)" class="remove" title="Remove this item"><i class="lni lni-close"></i></a>
-                                            <div class="cart-img-head">
-                                                <a class="cart-img" href="product-details.php"><img src="assets/images/header/cart-items/item1.jpg" alt="#"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h4><a href="product-details.php">
-                                                    Apple Watch Series 6</a></h4>
-                                                <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" class="remove" title="Remove this item"><i class="lni lni-close"></i></a>
-                                            <div class="cart-img-head">
-                                                <a class="cart-img" href="product-details.php"><img src="assets/images/header/cart-items/item2.jpg" alt="#"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h4><a href="product-details.php">Wi-Fi Smart Camera</a></h4>
-                                                <p class="quantity">1x - <span class="amount">$35.00</span></p>
-                                            </div>
-                                        </li>
+                                    <ul class="shopping-list cart-list" id="cart_product">
+                                        
                                     </ul>
                                     <div class="bottom">
-                                        <div class="total">
-                                            <span>Total</span>
-                                            <span class="total-amount">$134.00</span>
-                                        </div>
                                         <div class="button">
-                                            <a href="checkout.php" class="btn animate">Checkout</a>
+                                            <a href="cart.php" class="btn animate">Edit Cart</a>
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +159,7 @@
 
                     <div class="mega-category-menu">
                         <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
-                        <ul class="sub-category">
+                        <ul class="sub-category" id="get_category_home">ß
                             <li><a href="product-grids.php">accessories</a></li>
                             <li><a href="product-grids.php">Televisions</a></li>
                             <li><a href="product-grids.php">best selling</a></li>

@@ -15,7 +15,7 @@
 			</div>
 			<div class="col-lg-6 col-md-6 col-12">
 				<ul class="breadcrumb-nav">
-					<li><a href="index.php><i class="lni lni-home"></i> Home</a></li>
+					<li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
 					<li><a href="javascript:void(0)">Shop</a></li>
 					<li>Shop Grid</li>
 				</ul>
@@ -41,25 +41,25 @@
 						<h3>All Categories</h3>
 						<ul class="list">
 							<li>
-								<a href="product-grids.php">Computers & Accessories </a><span>(1138)</span>
+								<a href="product-grids.php">Men Shoes</a><span>(1138)</span>
 							</li>
 							<li>
-								<a href="product-grids.php">Smartphones & Tablets</a><span>(2356)</span>
+								<a href="product-grids.php">Men Slippers</a><span>(2356)</span>
 							</li>
 							<li>
-								<a href="product-grids.php">TV, Video & Audio</a><span>(420)</span>
+								<a href="product-grids.php">Sneakers</a><span>(420)</span>
 							</li>
 							<li>
-								<a href="product-grids.php">Cameras, Photo & Video</a><span>(874)</span>
+								<a href="product-grids.php">Women Shoes</a><span>(874)</span>
 							</li>
 							<li>
-								<a href="product-grids.php">Headphones</a><span>(1239)</span>
+								<a href="product-grids.php">Women Bags</a><span>(1239)</span>
 							</li>
 							<li>
-								<a href="product-grids.php">Wearable Electronics</a><span>(340)</span>
+								<a href="product-grids.php">Men Wear (clothes)</a><span>(340)</span>
 							</li>
 							<li>
-								<a href="product-grids.php">Printers & Ink</a><span>(512)</span>
+								<a href="product-grids.php">Women Wear (clothes)</a><span>(512)</span>
 							</li>
 						</ul>
 					</div>
@@ -67,7 +67,7 @@
 						<h3>Price Range</h3>
 						<input type="range" class="form-range" name="range" step="1" min="100" max="10000" value="10" onchange="rangePrimary.value=value">
 						<div class="range-inner">
-							<label>$</label>
+							<label>₵ </label>
 							<input type="text" id="rangePrimary" placeholder="100" />
 						</div>
 					</div>
@@ -76,25 +76,25 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
 							<label class="form-check-label" for="flexCheckDefault1">
-							$50 - $100L (208)
+							GHS. 50 - GHS. 100
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
 							<label class="form-check-label" for="flexCheckDefault2">
-							$100L - $500 (311)
+							GHS. 100 - GHS. 500 
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
 							<label class="form-check-label" for="flexCheckDefault3">
-							$500 - $1,000 (485)
+							GHS. 500 - GHS. 1,000
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
 							<label class="form-check-label" for="flexCheckDefault4">
-							$1,000 - $5,000 (213)
+							GHS. 1,000 - GHS. 5,000
 							</label>
 						</div>
 					</div>
@@ -103,49 +103,43 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault11">
 							<label class="form-check-label" for="flexCheckDefault11">
-							Apple (254)
+							Men Shoes (254)
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault22">
 							<label class="form-check-label" for="flexCheckDefault22">
-							Bosh (39)
+							Men Slippers (39)
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault33">
 							<label class="form-check-label" for="flexCheckDefault33">
-							Canon Inc. (128)
+							Sneakers (128)
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault44">
 							<label class="form-check-label" for="flexCheckDefault44">
-							Dell (310)
+							Women Shoes (310)
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault55">
 							<label class="form-check-label" for="flexCheckDefault55">
-							Hewlett-Packard (42)
+							Women Bags (42)
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault66">
 							<label class="form-check-label" for="flexCheckDefault66">
-							Hitachi (217)
+							Men Wear (217)
 							</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault77">
 							<label class="form-check-label" for="flexCheckDefault77">
-							LG Electronics (310)
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault88">
-							<label class="form-check-label" for="flexCheckDefault88">
-							Panasonic (74)
+							Women Wear (310)
 							</label>
 						</div>
 					</div>
@@ -166,7 +160,7 @@
 										<option>A - Z Order</option>
 										<option>Z - A Order</option>
 									</select>
-									<h3 class="total-show-product">Showing: <span>1 - 12 items</span></h3>
+									<h3 class="total-show-product">Showing: <span>1 - 15 items</span></h3>
 								</div>
 							</div>
 							<div class="col-lg-5 col-md-4 col-12">
@@ -185,17 +179,17 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-1.jpg" alt="#">
+											<img src="images/products/p1.jpeg" alt="#">
 											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Watches</span>
+											<span class="category">Women Bags</span>
 											<h4 class="title">
-												<a href="product-grids.php">Xiaomi Mi Band 5</a>
+												<a href="product-details.php">Designer Bag and Shoe</a>
 											</h4>
-											<ul class="review">
+												<ul class="review">
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
@@ -204,7 +198,7 @@
 												<li><span>4.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$199.00</span>
+												<span>GHS. 299.00</span>
 											</div>
 										</div>
 									</div>
@@ -212,19 +206,19 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-2.jpg" alt="#">
+										<img src="images/products/p3.jpeg" alt="#">	
 											<span class="sale-tag">-25%</span>
 											<div class="button">
-											<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Speaker</span>
+											<span class="category">Men Shoes</span>
 											<h4 class="title">
-											<a href="product-grids.php">Bluetooth Speaker</a>
+												<a href="product-details.php">Quality Designer Shoe</a>
 											</h4>
 											<ul class="review">
-												<li><i class="lni lni-star-filled"></i></li>
+											<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
@@ -232,8 +226,8 @@
 												<li><span>5.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$275.00</span>
-												<span class="discount-price">$300.00</span>
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
 											</div>
 										</div>
 									</div>
@@ -241,26 +235,26 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-3.jpg" alt="#">
+											<img src="images/products/p2.jpeg" alt="#">
 											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Camera</span>
+											<span class="category">Women Bags</span>
 											<h4 class="title">
-												<a href="product-grids.php">WiFi Security Camera</a>
+												<a href="product-details.php">Designer Bag and Shoe</a>
 											</h4>
-											<ul class="review">
+												<ul class="review">
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
-												<li><i class="lni lni-star-filled"></i></li>
-												<li><span>5.0 Review(s)</span></li>
+												<li><i class="lni lni-star"></i></li>
+												<li><span>4.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$399.00</span>
+												<span>GHS. 299.00</span>
 											</div>
 										</div>
 									</div>
@@ -268,19 +262,19 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-4.jpg" alt="#">
+											<img src="images/products/p4.jpeg" alt="#">
 											<span class="new-tag">New</span>
 											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Phones</span>
+											<span class="category">Men Shoes</span>
 											<h4 class="title">
-											<a href="product-grids.php">iphone 6x plus</a>
+												<a href="product-details.php">Quality Designer Shoe</a>
 											</h4>
 											<ul class="review">
-												<li><i class="lni lni-star-filled"></i></li>
+											<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
@@ -288,7 +282,8 @@
 												<li><span>5.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$400.00</span>
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
 											</div>
 										</div>
 									</div>
@@ -296,18 +291,18 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-5.jpg" alt="#">
+											<img src="images/products/p5.jpeg" alt="#">
 											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Headphones</span>
+											<span class="category">Men Shoes</span>
 											<h4 class="title">
-											<a href="product-grids.php">Wireless Headphones</a>
+												<a href="product-details.php">Quality Designer Shoe</a>
 											</h4>
 											<ul class="review">
-												<li><i class="lni lni-star-filled"></i></li>
+											<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
@@ -315,7 +310,8 @@
 												<li><span>5.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$350.00</span>
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
 											</div>
 										</div>
 									</div>
@@ -323,26 +319,27 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-6.jpg" alt="#">
+											<img src="images/products/p6.jpeg" alt="#">
 											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Speaker</span>
+											<span class="category">Men Shoes</span>
 											<h4 class="title">
-											<a href="product-grids.php">Mini Bluetooth Speaker</a>
+												<a href="product-details.php">Quality Designer Shoe</a>
 											</h4>
 											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
-												<li><i class="lni lni-star"></i></li>
-												<li><span>4.0 Review(s)</span></li>
+												<li><span>5.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$70.00</span>
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
 											</div>
 										</div>
 									</div>
@@ -350,47 +347,19 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-7.jpg" alt="#">
+											<img src="images/products/p7.jpeg" alt="#">
 											<span class="sale-tag">-50%</span>
 											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Headphones</span>
+											<span class="category">Men Shoes</span>
 											<h4 class="title">
-												<a href="product-grids.php">Wireless Headphones</a>
+												<a href="product-details.php">Quality Designer Shoe</a>
 											</h4>
 											<ul class="review">
-												<li><i class="lni lni-star-filled"></i></li>
-												<li><i class="lni lni-star-filled"></i></li>
-												<li><i class="lni lni-star-filled"></i></li>
-												<li><i class="lni lni-star-filled"></i></li>
-												<li><i class="lni lni-star"></i></li>
-												<li><span>4.0 Review(s)</span></li>
-											</ul>
-											<div class="price">
-												<span>$100.00</span>
-												<span class="discount-price">$200.00</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 col-12">
-									<div class="single-product">
-										<div class="product-image">
-											<img src="assets/images/products/product-8.jpg" alt="#">
-											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
-											</div>
-										</div>
-										<div class="product-info">
-											<span class="category">Laptop</span>
-											<h4 class="title">
-												<a href="product-grids.php">Apple MacBook Air</a>
-											</h4>
-											<ul class="review">
-												<li><i class="lni lni-star-filled"></i></li>
+											<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
@@ -398,7 +367,8 @@
 												<li><span>5.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$899.00</span>
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
 											</div>
 										</div>
 									</div>
@@ -406,19 +376,47 @@
 								<div class="col-lg-4 col-md-6 col-12">
 									<div class="single-product">
 										<div class="product-image">
-											<img src="assets/images/products/product-2.jpg" alt="#">
+											<img src="images/products/p8.jpeg" alt="#">
+											<div class="button">
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<span class="category">Men Shoes</span>
+											<h4 class="title">
+												<a href="product-details.php">Quality Designer Shoe</a>
+											</h4>
+											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><span>5.0 Review(s)</span></li>
+											</ul>
+											<div class="price">
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6 col-12">
+									<div class="single-product">
+										<div class="product-image">
+											<img src="images/products/p9.jpeg" alt="#">
 											<span class="sale-tag">-25%</span>
 											<div class="button">
-												<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<span class="category">Speaker</span>
+											<span class="category">Men Shoes</span>
 											<h4 class="title">
-											<a href="product-grids.php">Bluetooth Speaker</a>
+												<a href="product-details.php">Quality Designer Shoe</a>
 											</h4>
 											<ul class="review">
-												<li><i class="lni lni-star-filled"></i></li>
+											<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
 												<li><i class="lni lni-star-filled"></i></li>
@@ -426,8 +424,177 @@
 												<li><span>5.0 Review(s)</span></li>
 											</ul>
 											<div class="price">
-												<span>$275.00</span>
-												<span class="discount-price">$300.00</span>
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6 col-12">
+									<div class="single-product">
+										<div class="product-image">
+											<img src="images/products/p10.jpeg" alt="#">
+											<div class="button">
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<span class="category">Men Shoes</span>
+											<h4 class="title">
+												<a href="product-details.php">Quality Designer Shoe</a>
+											</h4>
+											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><span>5.0 Review(s)</span></li>
+											</ul>
+											<div class="price">
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6 col-12">
+									<div class="single-product">
+										<div class="product-image">
+											<img src="images/products/p11.jpeg" alt="#">
+											<span class="sale-tag">-25%</span>
+											<div class="button">
+											<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<span class="category">Men Shoes</span>
+											<h4 class="title">
+												<a href="product-details.php">Quality Designer Shoe</a>
+											</h4>
+											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><span>5.0 Review(s)</span></li>
+											</ul>
+											<div class="price">
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
+											</div>
+										</div>
+									</div>
+ 								</div>
+								<div class="col-lg-4 col-md-6 col-12">
+									<div class="single-product">
+										<div class="product-image">
+											<img src="images/products/p12.jpeg" alt="#">
+											<div class="button">
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<span class="category">Men Slippers</span>
+											<h4 class="title">
+												<a href="product-details.php">Quality Men Slippers</a>
+											</h4>
+											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><span>5.0 Review(s)</span></li>
+											</ul>
+											<div class="price">
+												<span> GHS. 75.00</span>
+												<span class="discount-price">GHS. 300.00</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6 col-12">
+									<div class="single-product">
+										<div class="product-image">
+											<img src="images/products/p13.jpeg" alt="#">
+											<div class="button">
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<span class="category">Men Shoes</span>
+											<h4 class="title">
+												<a href="product-details.php">Quality Men Shoes</a>
+											</h4>
+											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><span>5.0 Review(s)</span></li>
+											</ul>
+											<div class="price">
+												<span> GHS. 175.00</span>
+												<span class="discount-price">GHS. 300.00</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6 col-12">
+									<div class="single-product">
+										<div class="product-image">
+											<img src="images/products/p14.jpeg" alt="#">
+											<div class="button">
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<span class="category">Men Sneakers</span>
+											<h4 class="title">
+												<a href="product-details.php">Designer Men Sneakers</a>
+											</h4>
+											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><span>5.0 Review(s)</span></li>
+											</ul>
+											<div class="price">
+												<span> GHS. 275.00</span>
+												<span class="discount-price">GHS. 300.00</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6 col-12">
+									<div class="single-product">
+										<div class="product-image">
+											<img src="images/products/p15.jpeg" alt="#">
+											<div class="button">
+												<a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<span class="category">Men Slippers</span>
+											<h4 class="title">
+												<a href="product-details.php">Quality Men Slippers</a>
+											</h4>
+											<ul class="review">
+											<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><i class="lni lni-star-filled"></i></li>
+												<li><span>5.0 Review(s)</span></li>
+											</ul>
+											<div class="price">
+												<span> GHS. 75.00</span>
+												<span class="discount-price">GHS. 300.00</span>
 											</div>
 										</div>
 									</div>
@@ -437,8 +604,8 @@
 								<div class="col-12">
 									<div class="pagination left">
 										<ul class="pagination-list">
-											<li><a href="javascript:void(0)">1</a></li>
-											<li class="active"><a href="javascript:void(0)">2</a></li>
+											<li class="active"><a href="javascript:void(0)">1</a></li>
+											<li><a href="javascript:void(0)">2</a></li>
 											<li><a href="javascript:void(0)">3</a></li>
 											<li><a href="javascript:void(0)">4</a></li>
 											<li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
@@ -454,7 +621,7 @@
 										<div class="row align-items-center">
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="product-image">
-													<img src="assets/images/products/product-1.jpg" alt="#">
+													<img src="images/products/p1.jpeg" alt="#">
 													<div class="button">
 														<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to
 														Cart</a>
@@ -463,9 +630,9 @@
 											</div>
 											<div class="col-lg-8 col-md-8 col-12">
 												<div class="product-info">
-													<span class="category">Watches</span>
+													<span class="category">Bags</span>
 													<h4 class="title">
-													<a href="product-grids.php">Xiaomi Mi Band 5</a>
+													<a href="product-details.php">Women Bag and Shoe</a>
 													</h4>
 													<ul class="review">
 														<li><i class="lni lni-star-filled"></i></li>
@@ -476,7 +643,7 @@
 														<li><span>4.0 Review(s)</span></li>
 													</ul>
 													<div class="price">
-														<span>$199.00</span>
+														<span>GHS. 399.00</span>
 													</div>
 												</div>
 											</div>
@@ -488,7 +655,7 @@
 										<div class="row align-items-center">
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="product-image">
-													<img src="assets/images/products/product-2.jpg" alt="#">
+													<img src="images/products/p3.jpeg" alt="#">
 													<span class="sale-tag">-25%</span>
 													<div class="button">
 														<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to
@@ -498,9 +665,9 @@
 											</div>
 											<div class="col-lg-8 col-md-8 col-12">
 												<div class="product-info">
-													<span class="category">Speaker</span>
+													<span class="category">Men Shoe</span>
 													<h4 class="title">
-														<a href="product-grids.php">Big Power Sound Speaker</a>
+														<a href="product-details.php">Designer Men Shoe</a>
 													</h4>
 													<ul class="review">
 														<li><i class="lni lni-star-filled"></i></li>
@@ -511,8 +678,8 @@
 														<li><span>5.0 Review(s)</span></li>
 													</ul>
 													<div class="price">
-														<span>$275.00</span>
-														<span class="discount-price">$300.00</span>
+														<span>GHS. 275.00</span>
+														<span class="discount-price">GHS. 300.00</span>
 													</div>
 												</div>
 											</div>
@@ -524,7 +691,7 @@
 										<div class="row align-items-center">
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="product-image">
-													<img src="assets/images/products/product-3.jpg" alt="#">
+													<img src="images/products/p2.jpeg" alt="#">
 													<div class="button">
 														<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to
 														Cart</a>
@@ -533,9 +700,9 @@
 											</div>
 											<div class="col-lg-8 col-md-8 col-12">
 												<div class="product-info">
-													<span class="category">Camera</span>
+													<span class="category">Women Bag</span>
 													<h4 class="title">
-														<a href="product-grids.php">WiFi Security Camera</a>
+														<a href="product-details.php">Women Bag and Shoe</a>
 													</h4>
 													<ul class="review">
 														<li><i class="lni lni-star-filled"></i></li>
@@ -546,7 +713,7 @@
 														<li><span>5.0 Review(s)</span></li>
 													</ul>
 													<div class="price">
-														<span>$399.00</span>
+														<span>GHS. 399.00</span>
 													</div>
 												</div>
 											</div>
@@ -558,7 +725,7 @@
 										<div class="row align-items-center">
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="product-image">
-													<img src="assets/images/products/product-4.jpg" alt="#">
+													<img src="images/products/p4.jpeg" alt="#">
 													<span class="new-tag">New</span>
 													<div class="button">
 														<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to
@@ -568,9 +735,9 @@
 											</div>
 											<div class="col-lg-8 col-md-8 col-12">
 												<div class="product-info">
-													<span class="category">Phones</span>
+													<span class="category">Men Shoe</span>
 													<h4 class="title">
-														<a href="product-grids.php">iphone 6x plus</a>
+														<a href="product-details.php">Quality Designer Men Shoe</a>
 													</h4>
 													<ul class="review">
 														<li><i class="lni lni-star-filled"></i></li>
@@ -581,7 +748,7 @@
 														<li><span>5.0 Review(s)</span></li>
 													</ul>
 													<div class="price">
-														<span>$400.00</span>
+														<span>GHS. 400.00</span>
 													</div>
 												</div>
 											</div>
@@ -593,7 +760,7 @@
 										<div class="row align-items-center">
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="product-image">
-													<img src="assets/images/products/product-7.jpg" alt="#">
+													<img src="images/products/p30.jpeg" alt="#">
 													<span class="sale-tag">-50%</span>
 													<div class="button">
 														<a href="product-details.php" class="btn"><i class="lni lni-cart"></i> Add to
@@ -603,9 +770,9 @@
 											</div>
 											<div class="col-lg-8 col-md-8 col-12">
 												<div class="product-info">
-													<span class="category">Headphones</span>
+													<span class="category">Men</span>
 													<h4 class="title">
-													<a href="product-grids.php">PX7 Wireless Headphones</a>
+													<a href="product-details.php">Quality leather Men Shoe</a>
 													</h4>
 													<ul class="review">
 														<li><i class="lni lni-star-filled"></i></li>
@@ -616,8 +783,8 @@
 														<li><span>4.0 Review(s)</span></li>
 													</ul>
 													<div class="price">
-														<span>$100.00</span>
-														<span class="discount-price">$200.00</span>
+														<span>GHS. 500.00</span>
+														<span class="discount-price">GHS. 700.00</span>
 													</div>
 												</div>
 											</div>
@@ -649,3 +816,4 @@
 <?php include_once "include/footer.php" ?>
 
 <?php include_once "include/script.php" ?>
+<script src="actions.js"></script>

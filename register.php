@@ -1,4 +1,5 @@
 <?php include_once 'include/head.php' ?>
+
 <body>
 
 <?php include_once 'include/preloader.php' ?> 
@@ -33,46 +34,52 @@
                         <p>Registration takes less than a minute but gives you full control over your orders.</p>
                     </div>
                    
-                    <form method="POST" class="row registration-form" enctype="multipart/form-data">
+                    <form action="" method="POST" class="row registration-form">
 
                         <div class="error-container" style="display: none;">
                             <p class="alert text-center alert-danger error-text"></p>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label for="first-name">First Name</label>
                                 <input id="first-name" name="first-name" class="form-control" type="text" >
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label for="last-name">Last Name</label>
                                 <input id="last-name" name="last-name" class="form-control" type="text" >
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label for="email">E-mail Address</label>
                                 <input id="email" name="email" class="form-control" type="email" >
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
                                 <input id="phone" name="phone" class="form-control" type="number" >
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <input id="password" name="password" class="form-control" type="password" >
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label for="re-password">Confirm Password</label>
                                 <input id="re-password" name="re-password" class="form-control" type="password" >
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label for="re-password">Address</label>
+                                <input id="address" name="address" class="form-control" type="text" >
                             </div>
                         </div>
                         <div class="button">
@@ -95,3 +102,37 @@
 </a>
 
 <?php include_once 'include/script.php' ?>
+<script src="actions.js"></script>
+
+<script>
+
+    const form = document.querySelector(".registration-form"),
+    continueBtn = document.querySelector(".register-button"),
+    errorContainer = document.querySelector(".error-container"),
+    errorText = document.querySelector(".error-text");
+
+    form.onsubmit = (e) => {
+        e.preventDefault();
+    }
+
+    continueBtn.onclick = () => {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/register.php", true);
+        xhr.onload = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    let data = xhr.response;
+                    if (data === "success") {
+                        location.href = "index.php";
+                    } else {
+                        errorContainer.style.display = "block";
+                        errorText.textContent = data;
+                        $('.error-container').fadeOut(6000);
+                    }
+                }
+            }
+        }
+        let formData = new FormData(form);
+        xhr.send(formData);
+    }
+</script>

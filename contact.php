@@ -114,5 +114,5 @@
 </section>
 
 <?php include_once 'include/footer.php' ?>
-
+<script src="actions.js"></script>
 <?php include_once 'include/script.php' ?>
