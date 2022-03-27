@@ -31,334 +31,172 @@
     </div>
 </div>
 
+<?php
+    include_once "php/config.php";
+    if(isset($_SESSION['uid'])){
+        $sql = "SELECT * FROM users WHERE user_id='$_SESSION[uid]'";
+        $query = mysqli_query($con, $sql);
+        $user_row=mysqli_fetch_assoc($query);
+    }
+?>
 
 <section class="checkout-wrapper section">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="checkout-steps-form-style-1">
-                    <ul id="accordionExample">
-                        <li>
-                            <h6 class="title" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Your Personal Details </h6>
-                            <section class="checkout-steps-form-content collapse show" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="single-form form-default">
-                                            <label>User Name</label>
-                                            <div class="row">
-                                                <div class="col-md-6 form-input form">
-                                                    <input type="text" placeholder="First Name">
-                                                </div>
-                                                <div class="col-md-6 form-input form">
-                                                    <input type="text" placeholder="Last Name">
-                                                </div>
+        <form>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="checkout-steps-form-style-1">
+                        <h6 class="title" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Your Personal Details </h6>
+                        <section class="checkout-steps-form-content collapse show" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="single-form form-default">
+                                        <label>Name</label>
+                                        <div class="row">
+                                            <div class="col-md-6 form-input form">
+                                                <input type="text" value="<?php echo $user_row['firstname'] ?>" >
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Email Address</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Email Address">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Phone Number</label>
-                                                <div class="form-input form">
-                                                <input type="text" placeholder="Phone Number">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="single-form form-default">
-                                            <label>Mailing Address</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Mailing Address">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>City</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="City">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Post Code</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Post Code">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Country</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Country">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Region/State</label>
-                                            <div class="select-items">
-                                                <select class="form-control">
-                                                    <option value="0">select</option>
-                                                    <option value="1">select option 01</option>
-                                                    <option value="2">select option 02</option>
-                                                    <option value="3">select option 03</option>
-                                                    <option value="4">select option 04</option>
-                                                    <option value="5">select option 05</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="single-checkbox checkbox-style-3">
-                                            <input type="checkbox" id="checkbox-3">
-                                            <label for="checkbox-3"><span></span></label>
-                                            <p>My delivery and mailing addresses are the same.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="single-form button">
-                                            <button class="btn" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">next
-                                            step</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </li>
-
-                        <li>
-                            <h6 class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Shipping Address</h6>
-                            <section class="checkout-steps-form-content collapse" id="collapseFour" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="single-form form-default">
-                                            <label>User Name</label>
-                                            <div class="row">
-                                                <div class="col-md-6 form-input form">
-                                                    <input type="text" placeholder="First Name">
-                                                </div>
-                                                <div class="col-md-6 form-input form">
-                                                    <input type="text" placeholder="Last Name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Email Address</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Email Address">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Phone Number</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Phone Number">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="single-form form-default">
-                                            <label>Mailing Address</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Mailing Address">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>City</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="City">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Post Code</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Post Code">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Country</label>
-                                            <div class="form-input form">
-                                                <input type="text" placeholder="Country">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single-form form-default">
-                                            <label>Region/State</label>
-                                            <div class="select-items">
-                                                <select class="form-control">
-                                                    <option value="0">select</option>
-                                                    <option value="1">select option 01</option>
-                                                    <option value="2">select option 02</option>
-                                                    <option value="3">select option 03</option>
-                                                    <option value="4">select option 04</option>
-                                                    <option value="5">select option 05</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="checkout-payment-option">
-                                            <h6 class="heading-6 font-weight-400 payment-title">Select Delivery
-                                            Option</h6>
-                                            <div class="payment-option-wrapper">
-                                                <div class="single-payment-option">
-                                                    <input type="radio" name="shipping" checked id="shipping-1">
-                                                    <label for="shipping-1">
-                                                    <img src="assets/images/shipping/shipping-1.png" alt="Sipping">
-                                                    <p>Standerd Shipping</p>
-                                                    <span class="price">$10.50</span>
-                                                    </label>
-                                                </div>
-                                                <div class="single-payment-option">
-                                                    <input type="radio" name="shipping" id="shipping-2">
-                                                    <label for="shipping-2">
-                                                    <img src="assets/images/shipping/shipping-2.png" alt="Sipping">
-                                                    <p>Standerd Shipping</p>
-                                                    <span class="price">$10.50</span>
-                                                    </label>
-                                                </div>
-                                                <div class="single-payment-option">
-                                                    <input type="radio" name="shipping" id="shipping-3">
-                                                    <label for="shipping-3">
-                                                    <img src="assets/images/shipping/shipping-3.png" alt="Sipping">
-                                                    <p>Standerd Shipping</p>
-                                                    <span class="price">$10.50</span>
-                                                    </label>
-                                                </div>
-                                                <div class="single-payment-option">
-                                                    <input type="radio" name="shipping" id="shipping-4">
-                                                    <label for="shipping-4">
-                                                    <img src="assets/images/shipping/shipping-4.png" alt="Sipping">
-                                                    <p>Standerd Shipping</p>
-                                                    <span class="price">$10.50</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="steps-form-btn button">
-                                            <button class="btn" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">previous</button>
-                                            <a href="javascript:void(0)" class="btn btn-alt">Save & Continue</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </li>
-
-                        <li>
-                            <h6 class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">Payment Info</h6>
-                            <section class="checkout-steps-form-content collapse" id="collapsefive" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="checkout-payment-form">
-                                            <div class="single-form form-default">
-                                            <label>Cardholder Name</label>
-                                                <div class="form-input form">
-                                                    <input type="text" placeholder="Cardholder Name">
-                                                </div>
-                                            </div>
-                                            <div class="single-form form-default">
-                                                <label>Card Number</label>
-                                                <div class="form-input form">
-                                                    <input id="credit-input" type="text" placeholder="0000 0000 0000 0000">
-                                                    <img src="assets/images/payment/card.png" alt="card">
-                                                </div>
-                                            </div>
-                                            <div class="payment-card-info">
-                                                <div class="single-form form-default mm-yy">
-                                                    <label>Expiration</label>
-                                                    <div class="expiration d-flex">
-                                                        <div class="form-input form">
-                                                            <input type="text" placeholder="MM">
-                                                        </div>
-                                                        <div class="form-input form">
-                                                            <input type="text" placeholder="YYYY">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="single-form form-default">
-                                                    <label>CVC/CVV <span><i class="mdi mdi-alert-circle"></i></span></label>
-                                                    <div class="form-input form">
-                                                        <input type="text" placeholder="***">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-form form-default button">
-                                                <button class="btn">pay now</button>
+                                            <div class="col-md-6 form-input form">
+                                                <input type="text" value="<?php echo $user_row['lastname'] ?>" >
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </section>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="checkout-sidebar">
-                    <div class="checkout-sidebar-coupon">
-                        <p>Appy Coupon to get discount!</p>
-                        <form action="#">
-                            <div class="single-form form-default">
-                                <div class="form-input form">
-                                    <input type="text" placeholder="Coupon Code">
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Email Address</label>
+                                        <div class="form-input form">
+                                            <input type="text" value="<?php echo $user_row['email'] ?>" >
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="button">
-                                    <button class="btn">apply</button>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Phone Number</label>
+                                            <div class="form-input form">
+                                            <input type="text" value="<?php echo $user_row['mobile'] ?>" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-form form-default">
+                                        <label>Residential Address</label>
+                                        <div class="form-input form">
+                                            <input type="text" value="<?php echo $user_row['address'] ?>" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>City</label>
+                                        <div class="form-input form">
+                                            <input type="text" placeholder="City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Digital Address</label>
+                                        <div class="form-input form">
+                                            <input type="text" placeholder="Digital Address ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Country</label>
+                                        <div class="form-input form">
+                                            <input type="text" placeholder="Country">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Region</label>
+                                        <div class="form-input form">
+                                            <input type="text" placeholder="Region">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                        </section>
                     </div>
-                    <div class="checkout-sidebar-price-table mt-30">
-                        <h5 class="title">Pricing Table</h5>
-                        <div class="sub-total-price">
-                            <div class="total-price">
-                                <p class="value">Subotal Price:</p>
-                                <p class="price">GHS. 144.00</p>
-                            </div>
-                            <div class="total-price shipping">
-                                <p class="value">Subotal Price:</p>
-                                <p class="price">GHS. 10.50</p>
-                            </div>
-                            <div class="total-price discount">
-                                <p class="value">Subotal Price:</p>
-                                <p class="price">GHS. 10.00</p>
-                            </div>
+                </div>
+
+                <?php
+                    include_once "php/config.php";
+                    if(isset($_SESSION['uid'])){
+                        $x=0;
+                        $sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
+                        $query = mysqli_query($con, $sql);
+
+                        while($row=mysqli_fetch_array($query)){
+                            $x++;
+                            $product_id = $row["product_id"];
+                            $product_title = $row["product_title"];
+                            $product_price = $row["product_price"];
+                            $product_image = $row["product_image"];
+                            $cart_item_id = $row["id"];
+                            $qty = $row["qty"];
+                            $product_price = $qty*$product_price;
+                            $total_price=$total_price+$product_price;
+                            echo '
+                                <input type="hidden" class="form-control"  name="total_count" value="'.$x.'">
+                                <input type="hidden" class="form-control"  name="item_name_'.$x.'" value="'.$row["product_title"].'">
+                                <input type="hidden" class="form-control"  name="item_number_'.$x.'" value="'.$x.'">
+                                <input type="hidden" class="form-control"  name="amount_'.$x.'" value="'.$row["product_price"].'">
+                                <input type="hidden" class="form-control"  name="quantity_'.$x.'" value="'.$row["qty"].'">
+                            ';
+                            $quantity += $row['qty'];
+                        }
+                    
+                    }
+                ?>
+                <div class="col-lg-4">
+                    <div class="checkout-sidebar">
+                        <div class="checkout-sidebar-coupon">
+                            <p>Apply Coupon to get discount!</p>
+                            <form action="#">
+                                <div class="single-form form-default">
+                                    <div class="form-input form">
+                                        <input type="text" placeholder="Coupon Code">
+                                    </div>
+                                    <div class="button">
+                                        <button class="btn">apply</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="total-payable">
-                            <div class="payable-price">
-                                <p class="value">Subotal Price:</p>
-                                <p class="price">GHS. 164.50</p>
+                        <div class="checkout-sidebar-price-table mt-30">
+                            <h5 class="title">Pricing Table</h5>
+                            <div class="sub-total-price">
+                                <div class="total-price">
+                                    <p class="value">Total Quantity</p>
+                                    <p class="price"><?php echo $quantity ?></p>
+                                </div>
+                                <div class="total-price shipping">
+                                    <p class="value">Items Price</p>
+                                    <p class="price">GHS. <?php echo number_format($total_price) ?></p>
+                                </div>
+                                <div class="total-price discount">
+                                    <p class="value">Delivery</p>
+                                    <p class="price">GHS. 10.00</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="price-table-btn button">
-                            <a href="javascript:void(0)" class="btn btn-alt">Checkout</a>
+                            <div class="total-payable">
+                                <div class="payable-price">
+                                    <p style="font-weight: bold;" class="value">Total Price:</p>
+                                    <p style="font-weight: bold;" class="price">GHS. <?php echo number_format($total_price + 10) ?></p>
+                                </div>
+                            </div>
+                            <div class="price-table-btn button">
+                                <a href="javascript:void(0)" class="btn btn-alt">Checkout</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
 

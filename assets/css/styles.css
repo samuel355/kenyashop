@@ -6473,12 +6473,6 @@ blockquote span {
 
 .checkout-steps-form-style-1 .title:before {
     position: absolute;
-    top: 50%;
-    right: 16px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-family: lineicons;
-    content: "\ea5e";
     font-size: 13px;
     color: #7d7d7d;
     -webkit-transition: all .3s linear;

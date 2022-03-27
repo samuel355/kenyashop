@@ -381,12 +381,12 @@ $(document).ready(function() {
         })
     }
     /*
-    	net_total function is used to calcuate total amount of cart item
+    	net_total function is used to calculate total amount of cart item
     */
     function net_total() {
         var net_total = 0;
         $('.qty').each(function() {
-            var row = $(this).parent().parent();
+            var row = $(this).parent().parent().parent();
             var price = row.find('.price').val();
             var total = price * $(this).val() - 0;
             row.find('.total').val(total);
