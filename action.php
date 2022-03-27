@@ -225,17 +225,14 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 
 		if(isset($_SESSION["uid"])){
 
-		$user_id = $_SESSION["uid"];
+			$user_id = $_SESSION["uid"];
 
-		$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-		$run_query = mysqli_query($con,$sql);
-		$count = mysqli_num_rows($run_query);
+			$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
+			$run_query = mysqli_query($con,$sql);
+			$count = mysqli_num_rows($run_query);
 			if($count > 0){
 				echo "
-					<div class='alert alert-warning'>
-							<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-							<b>Product is already added into the cart Continue Shopping..!</b>
-					</div>
+					product already in cart
 				";//not in video
 			} else {
 				$sql = "INSERT INTO `cart`
@@ -254,12 +251,8 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$p_id' AND user_id = -1";
 			$query = mysqli_query($con,$sql);
 			if (mysqli_num_rows($query) > 0) {
-				echo "
-					<div class='alert alert-warning'>
-							<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-							<b>Product is already added into the cart Continue Shopping..!</b>
-					</div>";
-					exit();
+				echo "Product is already in cart ";
+				exit();
 			}
 			$sql = "INSERT INTO `cart`
 			(`p_id`, `ip_add`, `user_id`, `qty`) 
