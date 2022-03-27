@@ -37,7 +37,7 @@
                         
                             include_once "php/config.php";
                             if(isset($_SESSION['uid'])){
-                                $sql = "SELECT first_name FROM user_info WHERE user_id='$_SESSION[uid]'";
+                                $sql = "SELECT firstname FROM users WHERE user_id='$_SESSION[uid]'";
                                 $query = mysqli_query($con,$sql);
                                 $row=mysqli_fetch_array($query);
 
@@ -45,7 +45,7 @@
                                     <ul class="user-login">
                                         <li class="text-white">
                                             <i class="lni lni-user text-white" ></i>
-                                            <a class="text-white user-dropdown-button" id="user-dropdown" href="#">Hello '.$row["first_name"].'</a>
+                                            <a class="text-white user-dropdown-button" id="user-dropdown" href="#">Hello '.$row["firstname"].'</a>
                                             <ul class="user-dropdown user-dropdown-show">
                                                 <li><a href="#">Account</a></li>
                                                 <li><a href="#">Orders</a></li>
