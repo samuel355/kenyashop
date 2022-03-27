@@ -168,7 +168,7 @@
                             </form>
                         </div>
                         <div class="checkout-sidebar-price-table mt-30">
-                            <h5 class="title">Pricing Table</h5>
+                            <h5 class="title text-center" style="color: #e63946; font-weight: bold">PRICE SUMMARY</h5>
                             <div class="sub-total-price">
                                 <div class="total-price">
                                     <p class="value">Total Quantity</p>
@@ -185,12 +185,12 @@
                             </div>
                             <div class="total-payable">
                                 <div class="payable-price">
-                                    <p style="font-weight: bold;" class="value">Total Price:</p>
-                                    <p style="font-weight: bold;" class="price">GHS. <?php echo number_format($total_price + 10) ?></p>
+                                    <p style="font-weight: bold; color: #e63946;" class="value">Total Price:</p>
+                                    <p style="font-weight: bold; color: #e63946;" class="price">GHS. <?php echo number_format($total_price + 10) ?></p>
                                 </div>
                             </div>
                             <div class="price-table-btn button">
-                                <a href="javascript:void(0)" class="btn btn-alt">Checkout</a>
+                                <input type="submit" name="checkout-final" class="btn" value="Pay GHS.  <?php echo number_format($total_price) ?>" >
                             </div>
                         </div>
                     </div>
