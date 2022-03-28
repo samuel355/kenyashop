@@ -18,6 +18,8 @@ continueBtn.onclick = () => {
                     location.href = "index.php";
                 } else if (data == "cart_login") {
                     location.href = "cart.php";
+                } else if (data == "admin_success") {
+                    location.href = "admin/index.php";
                 } else {
                     errorContainer.style.display = "block";
                     errorText.textContent = data;

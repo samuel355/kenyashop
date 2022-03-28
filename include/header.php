@@ -159,7 +159,7 @@
 
                     <div class="mega-category-menu">
                         <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
-                        <ul class="sub-category" id="get_category_home">ß
+                        <ul class="sub-category" id="get_category_home">
                             <li><a href="product-grids.php">accessories</a></li>
                             <li><a href="product-grids.php">Televisions</a></li>
                             <li><a href="product-grids.php">best selling</a></li>
