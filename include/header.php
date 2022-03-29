@@ -159,28 +159,8 @@
 
                     <div class="mega-category-menu">
                         <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
-                        <ul class="sub-category" id="get_category_home">
-                            <li><a href="product-grids.php">accessories</a></li>
-                            <li><a href="product-grids.php">Televisions</a></li>
-                            <li><a href="product-grids.php">best selling</a></li>
-                            <li><a href="product-grids.php">top 100 offer</a></li>
-                            <li><a href="product-grids.php">sunglass</a></li>
-                            <li><a href="product-grids.php">watch</a></li>
-                            <li><a href="product-grids.php">man’s product</a></li>
-                            <li><a href="product-grids.php">Home Audio & Theater</a></li>
-                            <li><a href="product-grids.php">Computers & Tablets </a></li>
-                            <li><a href="product-grids.php">Video Games </a></li>
-                            <li><a href="product-grids.php">Home Appliances </a></li>
-                            <li><a href="product-grids.php">Digital Cameras</a></li>
-                            <li><a href="product-grids.php">Camcorders</a></li>
-                            <li><a href="product-grids.php">Camera Drones</a></li>
-                            <li><a href="product-grids.php">Smart Watches</a></li>
-                            <li><a href="product-grids.php">Headphones</a></li>
-                            <li><a href="product-grids.php">MP3 Players</a></li>
-                            <li><a href="product-grids.php">Microphones</a></li>
-                            <li><a href="product-grids.php">Chargers</a></li>
-                            <li><a href="product-grids.php">Batteries</a></li>
-                            <li><a href="product-grids.php">Cables & Adapters</a></li>
+                        <ul class="sub-category" id="get_category">
+
                         </ul>
                     </div>
 
@@ -197,7 +177,7 @@
                                     <a href="index.php" class="active" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="product-grids.php">Shop</a>
+                                    <a href="store.php">Shop</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="contact.php" aria-label="Toggle navigation">Contact Us</a>

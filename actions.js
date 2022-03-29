@@ -98,7 +98,26 @@ $(document).ready(function() {
             }
         })
 
+    });
+
+    $("body").delegate(".category-selected", "click", function(event) {
+        $("#category_items").html("<p class='text-center'>Loading...</p>");
+        event.preventDefault();
+        var cid = $(this).attr('cid');
+
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: { category_selected: 1, cat_id: cid },
+            success: function(data) {
+                $("#category_items").html(data);
+                $(this).css({ 'font-size': '18px', 'color': 'red' });
+            }
+
+        })
+
     })
+
     $("body").delegate(".categoryhome", "click", function(event) {
         $("#get_product").html("<h3>Loading...</h3>");
         event.preventDefault();
@@ -244,8 +263,9 @@ $(document).ready(function() {
                 success: function(data) {
                     count_item();
                     getCartItem();
-                    $('#product_msg').html(data);
-                    $('.overlay').hide();
+                    if (data == 'exist') {
+                        alert('Product Already in Cart')
+                    }
                 }
             })
         })
@@ -331,8 +351,24 @@ $(document).ready(function() {
             method: "POST",
             data: { removeItemFromCart: 1, rid: remove_id },
             success: function(data) {
-                $("#cart_msg").html(data);
+                $('.cart-badge').html(data);
                 checkOutDetails();
+            }
+        })
+    })
+
+    //Remove item from cart dropdown
+    $("body").delegate(".remove-from-c", "click", function(event) {
+        event.preventDefault();
+        var remove = $(this).parent().parent();
+        var remove_id = remove.find(".remove-from-c").attr("remove_id");
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: { removeItemFromC: 1, rid: remove_id },
+            success: function(data) {
+                $('.cart-badge').html(data);
+                getCartItem();
             }
         })
     })

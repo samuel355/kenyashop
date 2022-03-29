@@ -23,7 +23,7 @@ session_start();
                                 <p style="font-size: 16px; font-weight: bold" class="text-dark">Quality and affordable italian shoe with quality leather.</p>
                                 <h3 class="text-dak"><span class="text-dark">Now Only</span> GHS. 320.99</h3>
                                 <div class="button">
-                                    <a href="product-grids.php" class="btn">Shop Now</a>
+                                    <a href="store.php" class="btn">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -114,11 +114,11 @@ session_start();
                 <div class="single-category">
                     <h3 class="heading">Men Wear</h3>
                     <ul>
-                        <li><a href="product-grids.php">Leather Shoe</a></li>
-                        <li><a href="product-grids.php">Sneakers</a></li>
-                        <li><a href="product-grids.php">Slippers</a></li>
-                        <li><a href="product-grids.php">Shirts</a></li>
-                        <li><a href="product-grids.php">View All</a></li>
+                        <li><a href="store.php">Leather Shoe</a></li>
+                        <li><a href="store.php">Sneakers</a></li>
+                        <li><a href="store.php">Slippers</a></li>
+                        <li><a href="store.php">Shirts</a></li>
+                        <li><a href="store.php">View All</a></li>
                     </ul>
                     <div class="images">
                         <img src="images/featured/f1.png" alt="#">
@@ -129,11 +129,11 @@ session_start();
                 <div class="single-category">
                     <h3 class="heading">Ladies Wear</h3>
                     <ul>
-                        <li><a href="product-grids.php">Bags</a></li>
-                        <li><a href="product-grids.php">Shoes</a></li>
-                        <li><a href="product-grids.php">Slippers</a></li>
-                        <li><a href="product-grids.php">Dresses</a></li>
-                        <li><a href="product-grids.php">View All</a></li>
+                        <li><a href="store.php">Bags</a></li>
+                        <li><a href="store.php">Shoes</a></li>
+                        <li><a href="store.php">Slippers</a></li>
+                        <li><a href="store.php">Dresses</a></li>
+                        <li><a href="store.php">View All</a></li>
                     </ul>
                     <div class="images">
                         <img src="images/featured/f2.png" alt="#">
@@ -144,9 +144,11 @@ session_start();
                 <div class="single-category">
                     <h3 class="heading">Others</h3>
                     <ul>
-                        <li><a href="product-grids.php">Sneakers</a></li>
-                        <li><a href="product-grids.php">Belt</a></li>
-                        <li><a href="product-grids.php">View All</a></li>
+                        <li><a href="store.php">Sneakers</a></li>
+                        <li><a href="store.php">Belt</a></li>
+                        <li><a href="store.php">Watches</a></li>
+                        <li><a href="store.php">Bracelets</a></li>
+                        <li><a href="store.php">View All</a></li>
                     </ul>
                     <div class="images">
                         <img src="images/featured/f3.png" alt="#">
@@ -307,7 +309,7 @@ session_start();
                             <div class="product-info">
                                 <span class="category">Men Wear</span>
                                 <h4 class="title">
-                                    <a href="product-grids.php">Quality Italian men shoe</a>
+                                    <a href="store.php">Quality Italian men shoe</a>
                                 </h4>
                                 <ul class="review">
                                     <li><i class="lni lni-star-filled"></i></li>
