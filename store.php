@@ -30,13 +30,6 @@
 		<div class="row">
 			<div class="col-lg-3 col-12">
 				<div class="product-sidebar">
-					<div class="single-widget search">
-						<h3>Search Product</h3>
-						<form action="#">
-							<input type="text" placeholder="Search Here...">
-							<button type="submit"><i class="lni lni-search-alt"></i></button>
-						</form>
-					</div>
 					<div class="single-widget">
 						<h3>All Categories</h3>
 						<nav>
@@ -136,7 +129,7 @@
 								<nav>
 									<div class="single-widget search">
 										<form action="#">
-											<input class="form-control" type="text" placeholder="Search Here...">
+											<input id="search-product" class="form-control" type="text" placeholder="Search Here...">
 											<button style="display: none;" type="submit"><i class="lni lni-search-alt"></i></button>
 										</form>
 									</div>
@@ -146,65 +139,10 @@
 					</div>
 					<div class="tab-content" id="nav-tabContent">
 						<div class="tab-pane fade show active" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
-							<div class="row" id="category_items">
-								<?php
-									include_once "php/config.php";
-									$sql = "SELECT * FROM products limit 15";
-									$run_query = mysqli_query($con,$sql);
-									while($row=mysqli_fetch_array($run_query)){
-										$pro_id = $row['product_id'];
-										$pro_cat = $row['product_cat'];
-										$pro_brand = $row['product_brand'];
-										$pro_title = $row['product_title'];
-										$pro_price = $row['product_price'];
-										$pro_image = $row['product_image'];
-										$cat_name = $row["cat_title"];
-										
-										echo '
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-product">
-													<div class="product-image">
-														<img style="width 100%; height: 40vh; object-fit: contain" src="product_images/'.$pro_image.'" alt="#">
-														<div class="button">
-															<button pid='.$pro_id.' id="product" class="btn add-to-cart-btn"><i class="lni lni-cart"></i> Add to Cart</button>
-														</div>
-													</div>
-													<div class="product-info">
-														<span class="category">'.$cat_name.'</span>
-														<h4 class="title">
-															<a href="product-details.php?p='.$pro_id.'">'.$pro_title.'</a>
-														</h4>
-															<ul class="review">
-															<li><i class="lni lni-star-filled"></i></li>
-															<li><i class="lni lni-star-filled"></i></li>
-															<li><i class="lni lni-star-filled"></i></li>
-															<li><i class="lni lni-star-filled"></i></li>
-															<li><i class="lni lni-star"></i></li>
-															<li><span>4.0 Review(s)</span></li>
-														</ul>
-														<div class="price">
-															<span>GHS. '.$pro_price.'.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										';
-									}
-								?>
+							<div class="row store-products" id="category_items">
+								
 							</div>
-							<div class="row">
-								<div class="col-12">
-									<div class="pagination left">
-										<ul class="pagination-list">
-											<li class="active"><a href="javascript:void(0)">1</a></li>
-											<li><a href="javascript:void(0)">2</a></li>
-											<li><a href="javascript:void(0)">3</a></li>
-											<li><a href="javascript:void(0)">4</a></li>
-											<li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
+							<p class="text-center mt-3" id="fetch_products_message"></p>
 						</div>
 					</div>
 				</div>
@@ -217,3 +155,62 @@
 
 <?php include_once "include/script.php" ?>
 <script src="actions.js"></script>
+<script>
+	//Auto Load Data From Database
+	var limit = 9;
+	var start = 0;
+	var action = 'inactive';
+	
+	function load_all_products(limit, start){
+		$.ajax({
+			url: 'php/fetch_all_products.php',
+			method: 'POST',
+			data: {limit:limit, start: start},
+			cache: false,
+
+			success: function(data){
+				$(".store-products").append(data);
+				if(data == ''){
+					$('#fetch_products_message').html('No available Products');
+					action = 'active'
+				}else{
+					$('#fetch_products_message').html('Please wait...');
+					action = 'inactive'
+				}
+			}
+		})
+	}
+
+	if(action == 'inactive'){
+		load_all_products(limit, start);
+	}
+	$(window).scroll(function(){
+		if($(window).scrollTop()+$(window).height() > $('.store-products').height() && action == 'inactive'){
+			action = 'active';
+			start = start + limit;
+			setTimeout(function(){
+				load_all_products(limit, start);
+			}, 1000)
+		}
+	})
+
+
+	//Search Product 1
+	const searchBar = document.querySelector('#search-product')
+	searchedProduct = document.querySelector('.store-products');
+	searchBar.onkeyup = () => {
+		let searchTerm = searchBar.value;
+        let xhr = new XMLHttpRequest();
+		xhr.open("POST", "php/search-store.php", true);
+		xhr.onload = () => {
+			if (xhr.readyState === XMLHttpRequest.DONE) {
+				if (xhr.status === 200) {
+					let data = xhr.response;
+					searchedProduct.innerHTML = data;
+				}
+			}
+		}
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr.send("searchTerm=" + searchTerm);
+	}
+</script>

@@ -70,17 +70,22 @@ if(isset($_POST["brand"])){
 		echo "</div>";
 	}
 }
+
 if(isset($_POST["page"])){
 	$sql = "SELECT * FROM products";
 	$run_query = mysqli_query($con,$sql);
 	$count = mysqli_num_rows($run_query);
 	$pageno = ceil($count/9);
-	for($i=1;$i<=$pageno;$i++){
-		echo "
-			<li><a href='#product-row' page='$i' id='page' class='active'>$i</a></li>
-            
-            
-		";
+	for($i=1; $i<=$pageno; $i++){
+		if($i == 1){
+			echo'
+				<li class="pageitem active" id="'.$i.'"><a href="JavaScript:Void(0);" data-id="'.$i.' class="page-link">'.$i.'</a></li>
+			';
+		}else{
+			echo '
+				<li class="pageitem" id="'.$i.'"><a href="JavaScript:Void(0);" data-id="'.$i.' class="page-link">'.$i.'</a></li>
+			';
+		}
 	}
 }
 
@@ -373,7 +378,7 @@ if (isset($_POST["Common"])) {
 			echo '
 				<div class="cart-summary">
 					<small class="qty">'.$n.' Item(s) selected</small>
-					<h5>GHS. '.$total_price.'</h5>
+					<h5>GHS. '.number_format($total_price).'</h5>
 				</div>
 			'
             ?>
@@ -483,10 +488,10 @@ if (isset($_POST["Common"])) {
 												<li>Coupon<span>00</span></li>
 												<li class="last" style="font-weight: bold; color:#e63946; font-size: 16px; ">TOTAL<span class="net_total"></span></li>
 											</ul>
-											<div class="button">
+											<div class="button" id="checkout-and-shop-buttons">
 												<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
 												<input class="btn" type="submit" id="submit" name="login_user_with_product" value="Ready to Checkout"> 
-												<a href="product-grids.php" class="btn btn-alt">Continue shopping</a>
+												<a href="store.php" class="btn btn-alt">Continue shopping</a>
 											</div>
 										</div>
 									</div>
@@ -535,7 +540,6 @@ if (isset($_POST["removeItemFromCart"])) {
 	$row = mysqli_fetch_array($query);
 	echo $row["count_item"];
 	exit();
-	
 }
 
 //Remove Item From cart dropdown

@@ -121,12 +121,6 @@
                         
                         </div>
                         <div class="navbar-cart">
-                            <div class="wishlist">
-                                <a href="javascript:void(0)">
-                                    <i class="lni lni-heart"></i>
-                                    <span class="total-items">0</span>
-                                </a>
-                            </div>
                             <div class="cart-items">
                                 <a href="javascript:void(0)" class="main-btn">
                                     <i class="lni lni-cart"></i>
@@ -174,13 +168,10 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ms-auto">
                                 <li class="nav-item">
-                                    <a href="index.php" class="active" aria-label="Toggle navigation">Home</a>
+                                    <a href="index.php" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="store.php">Shop</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.php" aria-label="Toggle navigation">Contact Us</a>
                                 </li>
                             </ul>
                         </div>

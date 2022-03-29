@@ -36,7 +36,7 @@ session_start();
                                 <p style="font-size: 16px; font-weight: bold" class="text-dark">Quality and affordable designer shoe with quality leather.</p>
                                 <h3 class="text-dak"><span class="text-dark">Now Only</span> GHS. 300.99</h3>
                                 <div class="button">
-                                    <a href="product-grids.php" class="btn">Shop Now</a>
+                                    <a href="store.php" class="btn">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ session_start();
                                 <p style="font-size: 16px; font-weight: bold" class="text-dark">Quality and affordable Designer bag with matching shoe.</p>
                                 <h3 class="text-dak"><span class="text-dark">Now Only</span> GHS. 720.99</h3>
                                 <div class="button">
-                                    <a href="product-grids.php" class="btn">Shop Now</a>
+                                    <a href="store.php" class="btn">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ session_start();
                                 <p style="font-size: 16px; font-weight: bold" class="text-dark">Quality and affordable Designer bag with matching shoe.</p>
                                 <h3 class="text-dak"><span class="text-dark">Now Only</span> GHS. 920.99</h3>
                                 <div class="button">
-                                    <a href="product-grids.php" class="btn">Shop Now</a>
+                                    <a href="store.php" class="btn">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@ session_start();
                                 <h2>Weekly Sale!</h2>
                                 <p>Saving up to 50% off all online store items this week.</p>
                                 <div class="button">
-                                    <a class="btn" href="product-grids.php">Shop Now</a>
+                                    <a class="btn" href="store.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -104,8 +104,7 @@ session_start();
             <div class="col-12">
                 <div class="section-title">
                     <h2>Featured Categories</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                    suffered alteration in some form.</p>
+                    <p>There are many categories to browse products from.</p>
                 </div>
             </div>
         </div>
@@ -173,7 +172,7 @@ session_start();
             <?php  
             
                 include_once "php/config.php";
-                $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id LIMIT 8";
+                $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id ORDER BY product_id DESC LIMIT 8";
                 $run_query = mysqli_query($con,$product_query);
                 if(mysqli_num_rows($run_query) > 0){
                     while($row = mysqli_fetch_array($run_query)){
@@ -234,7 +233,7 @@ session_start();
                         <h2>Women Bag</h2>
                         <p class="text-dark">Quality Designer women bag, very affordable.</p>
                         <div class="button">
-                            <a href="product-details.php" class="btn">View Details</a>
+                            <a href="store.php" class="btn">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -245,7 +244,7 @@ session_start();
                         <h2>Multi-sex Sneakers</h2>
                         <p class="text-dark">Multi-sex quality sneakers, explore different designs</p>
                         <div class="button">
-                            <a href="product-details.php" class="btn">Shop Now</a>
+                            <a href="store.php" class="btn">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -261,98 +260,62 @@ session_start();
             <div class="col-12">
                 <div class="section-title">
                     <h2>Special Offer</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                    suffered alteration in some form.</p>
+                    <p>These are special products with discounts.</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 col-md-12 col-12">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                            <div class="product-image">
-                                <img src="images/products/p28.jpeg" alt="#">
-                                <div class="button">
-                                    <a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to
-                                    Cart</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <span class="category">Men Wear</span>
-                                <h4 class="title">
-                                <a href="product-details.php">Quality Designer men shoe</a>
-                                </h4>
-                                <ul class="review">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><span>5.0 Review(s)</span></li>
-                                </ul>
-                                <div class="price">
-                                    <span>GHS. 399.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                            <div class="product-image">
-                                <img src="images/products/p29.jpeg" alt="#">
-                                <div class="button">
-                                    <a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to
-                                    Cart</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <span class="category">Men Wear</span>
-                                <h4 class="title">
-                                    <a href="store.php">Quality Italian men shoe</a>
-                                </h4>
-                                <ul class="review">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><span>5.0 Review(s)</span></li>
-                                </ul>
-                                <div class="price">
-                                    <span>GHS. 899.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                            <div class="product-image">
-                                <img src="images/products/p26.jpeg" alt="#">
-                                <div class="button">
-                                    <a href="cart.php" class="btn"><i class="lni lni-cart"></i> Add to
-                                    Cart</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <span class="category">Men Wear</span>
-                                <h4 class="title">
-                                <a href="product-details.php">Quality Designer men shoe</a>
-                                </h4>
-                                <ul class="review">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><span>5.0 Review(s)</span></li>
-                                </ul>
-                                <div class="price">
-                                    <span>GHS. 399.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php  
+            
+                        include_once "php/config.php";
+                        $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id ORDER BY product_id ASC LIMIT 3";
+                        $run_query = mysqli_query($con,$product_query);
+                        if(mysqli_num_rows($run_query) > 0){
+                            while($row = mysqli_fetch_array($run_query)){
+                                $pro_id    = $row['product_id'];
+                                $pro_cat   = $row['product_cat'];
+                                $pro_brand = $row['product_brand'];
+                                $pro_title = $row['product_title'];
+                                $pro_price = $row['product_price'];
+                                $pro_image = $row['product_image'];
+
+                                $cat_name = $row["cat_title"];
+
+                                echo '
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="single-product">
+                                            <div class="product-image">
+                                                <img style="width 100%; height: 40vh; object-fit: contain" src="product_images/'.$pro_image.'" alt="#">
+                                                <div class="button">
+                                                    <button pid='.$pro_id.' id="product" class="btn add-to-cart-btn"><i class="lni lni-cart"></i> Add to Cart</button>
+                                                </div>
+                                            </div>
+                                            <div class="product-info">
+                                                <span class="category">'.$cat_name.'</span>
+                                                <h4 class="title">
+                                                    <a href="product-details.php?p='.$pro_id.'">'.$pro_title.'</a>
+                                                </h4>
+                                                    <ul class="review">
+                                                    <li><i class="lni lni-star-filled"></i></li>
+                                                    <li><i class="lni lni-star-filled"></i></li>
+                                                    <li><i class="lni lni-star-filled"></i></li>
+                                                    <li><i class="lni lni-star-filled"></i></li>
+                                                    <li><i class="lni lni-star"></i></li>
+                                                    <li><span>4.0 Review(s)</span></li>
+                                                </ul>
+                                                <div class="price">
+                                                    <span>GHS. '.$pro_price.'.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+                        }
+                    
+                    ?>
                 </div>
                 <div class="single-banner right" style="background-image:url('assets/images/banner/banner-3-bg.jpg');margin-top: 30px;">
                     <div class="content">
@@ -368,49 +331,72 @@ session_start();
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 col-12">
-                <div class="offer-content">
-                    <div class="image">
-                        <img src="images/products/p31.jpeg" alt="#">
-                        <span class="sale-tag">-50%</span>
-                    </div>
-                    <div class="text">
-                        <h2><a href="product-details.php">Discounted Men Shoe</a></h2>
-                        <ul class="review">
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><span>5.0 Review(s)</span></li>
-                        </ul>
-                        <div class="price">
-                            <span>GHS. 200.00</span>
-                            <span class="discount-price">GHS. 400.00</span>
-                        </div>
-                        <p>Quality discounted men shoe... Up to 50% discount <p>
-                    </div>
-                    <div class="box-head">
-                        <div style="display: none;" class="box">
-                            <h1 id="days">000</h1>
-                            <h2 id="daystxt">Days</h2>
-                        </div>
-                        <div class="box">
-                            <h1 id="hours">00</h1>
-                            <h2 id="hourstxt">Hours</h2>
-                        </div>
-                        <div class="box">
-                            <h1 id="minutes">00</h1>
-                            <h2 id="minutestxt">Minutes</h2>
-                        </div>
-                        <div class="box">
-                            <h1 id="seconds">00</h1>
-                            <h2 id="secondstxt">Secondes</h2>
-                        </div>
-                    </div>
-                    <div style="background: rgb(204, 24, 24);" class="alert">
-                        <h1 style="padding: 50px 80px;color: white;">We are sorry, Event ended ! </h1>
-                    </div>
-                </div>
+                <?php  
+                
+                    include_once "php/config.php";
+                    $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id ORDER BY product_id ASC LIMIT 1";
+                    $run_query = mysqli_query($con,$product_query);
+                    if(mysqli_num_rows($run_query) > 0){
+                        while($row = mysqli_fetch_array($run_query)){
+                            $pro_id    = $row['product_id'];
+                            $pro_cat   = $row['product_cat'];
+                            $pro_brand = $row['product_brand'];
+                            $pro_title = $row['product_title'];
+                            $pro_price = $row['product_price'];
+                            $pro_image = $row['product_image'];
+
+                            $cat_name = $row["cat_title"];
+
+                            echo '
+                                <div class="offer-content">
+                                    <div class="image">
+                                        <img src="product_images/'.$pro_image.'" alt="#">
+                                        <span class="sale-tag">-10%</span>
+                                    </div>
+                                    <div class="text">
+                                        <h2><a href="product-details.php?p='.$pro_id.'">Discounted '.$pro_title.'</a></h2>
+                                        <ul class="review">
+                                            <li><i class="lni lni-star-filled"></i></li>
+                                            <li><i class="lni lni-star-filled"></i></li>
+                                            <li><i class="lni lni-star-filled"></i></li>
+                                            <li><i class="lni lni-star-filled"></i></li>
+                                            <li><i class="lni lni-star-filled"></i></li>
+                                            <li><span>5.0 Review(s)</span></li>
+                                        </ul>
+                                        <div class="price">
+                                            <span>GHS. '.$pro_price.'.00</span>
+                                            <span class="discount-price">GHS. '.$pro_price*0.1.'.00</span>
+                                        </div>
+                                        <p>Quality discounted '.$pro_title.'... Up to 10% discount <p>
+                                    </div>
+                                    <div class="box-head">
+                                        <div style="display: none;" class="box">
+                                            <h1 id="days">000</h1>
+                                            <h2 id="daystxt">Days</h2>
+                                        </div>
+                                        <div class="box">
+                                            <h1 id="hours">00</h1>
+                                            <h2 id="hourstxt">Hours</h2>
+                                        </div>
+                                        <div class="box">
+                                            <h1 id="minutes">00</h1>
+                                            <h2 id="minutestxt">Minutes</h2>
+                                        </div>
+                                        <div class="box">
+                                            <h1 id="seconds">00</h1>
+                                            <h2 id="secondstxt">Secondes</h2>
+                                        </div>
+                                    </div>
+                                    <div style="background: rgb(204, 24, 24);" class="alert">
+                                        <h1 style="padding: 50px 80px;color: white;">We are sorry, Event ended ! </h1>
+                                    </div>
+                                </div>
+                            ';
+                        }
+                    }
+                
+                ?>
+                
             </div>
         </div>
     </div>
@@ -424,35 +410,32 @@ session_start();
                 <h4 class="list-title">Best Sellers</h4>
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f1.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f1.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Italian men wear</a>
+                            <a href="store.php">Italian men wear</a>
                         </h3>
-                        <span>GHS. 287.99</span>
                     </div>
                 </div>
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f2.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f2.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Women Matching Bag and shoe</a>
+                            <a href="store.php">Women Matching Bag and shoe</a>
                         </h3>
-                        <span>GHS. 495.00</span>
                     </div>
                 </div>
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f3.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f3.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Multi-sex Sneakers</a>
+                            <a href="store.php">Multi-sex Sneakers</a>
                         </h3>
-                        <span>GHS. 220.00</span>
                     </div>
                 </div>
             </div>
@@ -461,35 +444,32 @@ session_start();
                 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f3.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f3.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Multi-sex Sneakers</a>
+                            <a href="store.php">Multi-sex Sneakers</a>
                         </h3>
-                        <span>GHS. 220.00</span>
                     </div>
                 </div>
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f1.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f1.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Italian men wear</a>
+                            <a href="store.php">Italian men wear</a>
                         </h3>
-                        <span>GHS. 287.99</span>
                     </div>
                 </div>
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f2.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f2.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Women Matching Bag and shoe</a>
+                            <a href="store.php">Women Matching Bag and shoe</a>
                         </h3>
-                        <span>GHS. 495.00</span>
                     </div>
                 </div>
             </div>
@@ -498,35 +478,32 @@ session_start();
                 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f2.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f2.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Women Matching Bag and shoe</a>
+                            <a href="store.php">Women Matching Bag and shoe</a>
                         </h3>
-                        <span>GHS. 495.00</span>
                     </div>
                 </div>
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f1.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f1.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Italian men wear</a>
+                            <a href="store.php">Italian men wear</a>
                         </h3>
-                        <span>GHS. 287.99</span>
                     </div>
                 </div>
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="product-details.php"><img src="images/featured/f3.png" alt="#"></a>
+                        <a href="store.php"><img src="images/featured/f3.png" alt="#"></a>
                     </div>
                     <div class="list-info">
                         <h3>
-                            <a href="product-details.php">Multi-sex Sneakers</a>
+                            <a href="store.php">Multi-sex Sneakers</a>
                         </h3>
-                        <span>GHS. 220.00</span>
                     </div>
                 </div>
             </div>

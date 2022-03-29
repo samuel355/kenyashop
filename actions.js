@@ -311,15 +311,16 @@ $(document).ready(function() {
     	and then show the result into class .net_total
     */
     $("body").delegate(".qty", "keyup", function(event) {
+            $('#checkout-and-shop-buttons').css({ 'display': 'none' });
             event.preventDefault();
             var row = $(this).parent().parent().parent();
             var price = row.find('.price').val();
             var qty = row.find('.qty').val();
             if (isNaN(qty)) {
-                qty = 1;
+                alert('type a number');
             };
             if (qty < 1) {
-                qty = 1;
+                alert('quantity must be one or more');
             };
             price = parseInt(price);
             qty = parseInt(qty);
@@ -333,6 +334,19 @@ $(document).ready(function() {
             });
 
             $('.net_total').html("GHS. " + net_total);
+
+            var update_id = row.find(".update").attr("update_id");
+
+            $.ajax({
+                url: "action.php",
+                method: "POST",
+                data: { updateCartItem: 1, update_id: update_id, qty: qty },
+                success: function(data) {
+                    $("#cart_msg").html(data);
+                    checkOutDetails();
+                    $('#checkout-and-shop-buttons').css({ 'display': 'block' });
+                }
+            })
 
         })
         //Change Quantity end here 
@@ -431,10 +445,10 @@ $(document).ready(function() {
             net_total += ($(this).val() - 0);
             console.log(net_total);
         })
-        $('.net_total').html("GHS " + net_total);
+        $('.net_total').html("GHS. " + Number(net_total).toLocaleString());
     }
 
-    //remove product from cart
+    //Store Products Pagination
 
     page();
 
@@ -448,6 +462,7 @@ $(document).ready(function() {
             }
         })
     }
+
     $("body").delegate("#page", "click", function() {
         var pn = $(this).attr("page");
         $.ajax({
@@ -455,7 +470,7 @@ $(document).ready(function() {
             method: "POST",
             data: { getProduct: 1, setPage: 1, pageNumber: pn },
             success: function(data) {
-                $("#get_product").html(data);
+                $(".store-products").html(data);
             }
         })
     })
