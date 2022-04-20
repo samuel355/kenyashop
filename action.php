@@ -213,7 +213,58 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 	
 if(isset($_POST['category_selected'])){
 	$id = $_POST['cat_id'];
-	$sql = "SELECT * FROM products,categories WHERE product_cat = '$id' AND product_cat=cat_id";
+	$sql = "SELECT * FROM products, categories WHERE product_cat = '$id' AND product_cat=cat_id";
+	$run_query = mysqli_query($con,$sql);
+	if(mysqli_num_rows($run_query) <= 0){
+		echo '<p class="text-center mt-3">No products found with this category</p>
+			<p class="text-center mb-5 mt-2">Loading other products</p>
+		';
+	}else{
+		while($row=mysqli_fetch_array($run_query)){
+			$pro_id = $row['product_id'];
+			$pro_cat = $row['product_cat'];
+			$pro_brand = $row['product_brand'];
+			$pro_title = $row['product_title'];
+			$pro_price = $row['product_price'];
+			$pro_image = $row['product_image'];
+			$cat_name = $row["cat_title"];
+			
+			echo '
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="single-product">
+						<div class="product-image">
+							<img style="width 100%; height: 40vh; object-fit: contain" src="product_images/'.$pro_image.'" alt="#">
+							<div class="button">
+								<button pid='.$pro_id.' id="product" class="btn add-to-cart-btn"><i class="lni lni-cart"></i> Add to Cart</button>
+							</div>
+						</div>
+						<div class="product-info">
+							<span class="category">'.$cat_name.'</span>
+							<h4 class="title">
+								<a href="product-details.php?p='.$pro_id.'">'.$pro_title.'</a>
+							</h4>
+								<ul class="review">
+								<li><i class="lni lni-star-filled"></i></li>
+								<li><i class="lni lni-star-filled"></i></li>
+								<li><i class="lni lni-star-filled"></i></li>
+								<li><i class="lni lni-star-filled"></i></li>
+								<li><i class="lni lni-star"></i></li>
+								<li><span>4.0 Review(s)</span></li>
+							</ul>
+							<div class="price">
+								<span>GHS. '.$pro_price.'.00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			';
+		}
+	}
+}
+
+//Get all Products
+if(isset($_POST['all_products'])){
+	$sql = "SELECT * FROM products";
 	$run_query = mysqli_query($con,$sql);
 	while($row=mysqli_fetch_array($run_query)){
 		$pro_id = $row['product_id'];
@@ -256,6 +307,60 @@ if(isset($_POST['category_selected'])){
 	}
 }
 
+//Add Product to Cart from Product Details page
+if(isset($_POST['addToCartFromDetails'])){
+
+	$product_id = $_POST['product_id'];
+	$quantity = $_POST['quantity'];
+
+	if(isset($_SESSION["uid"])){
+
+		$user_id = $_SESSION["uid"];
+
+		$sql = "SELECT * FROM cart WHERE p_id = '$product_id' AND user_id = '$user_id'";
+		$run_query = mysqli_query($con,$sql);
+		$count = mysqli_num_rows($run_query);
+		if($count > 0){
+			echo "
+				exist
+			";//not in video
+		} else {
+			$sql = "INSERT INTO `cart`
+			(`p_id`, `ip_add`, `user_id`, `qty`) 
+			VALUES ('$product_id','$ip_add','$user_id','$quantity')";
+			if(mysqli_query($con,$sql)){
+				echo "
+					<div class='alert alert-success'>
+						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+						<b>Product is Added..!</b>
+					</div>
+				";
+			}
+		}
+	}else{
+		$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$product_id' AND user_id = -1";
+		$query = mysqli_query($con,$sql);
+		if (mysqli_num_rows($query) > 0) {
+			echo "exist";
+			exit();
+		}
+		$sql = "INSERT INTO `cart`
+		(`p_id`, `ip_add`, `user_id`, `qty`) 
+		VALUES ('$product_id','$ip_add','-1','$quantity')";
+		if (mysqli_query($con,$sql)) {
+			echo "
+				<div class='alert alert-success'>
+					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+					<b>Your product is Added Successfully..!</b>
+				</div>
+			";
+			exit();
+		}
+		
+	}
+}
+
+//Add Product to Cart
 if(isset($_POST["addToCart"])){
 	
 
@@ -264,11 +369,11 @@ if(isset($_POST["addToCart"])){
 
 	if(isset($_SESSION["uid"])){
 
-	$user_id = $_SESSION["uid"];
+		$user_id = $_SESSION["uid"];
 
-	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-	$run_query = mysqli_query($con,$sql);
-	$count = mysqli_num_rows($run_query);
+		$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
+		$run_query = mysqli_query($con,$sql);
+		$count = mysqli_num_rows($run_query);
 		if($count > 0){
 			echo "
 				exist

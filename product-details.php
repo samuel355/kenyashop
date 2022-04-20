@@ -66,7 +66,7 @@
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group quantity">
                                             <label for="color">Quantity</label>
-                                            <select class="form-control">
+                                            <select name="product-quantity" class="form-control product-quantity">
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="button cart-button">
-                                            <button class="btn" style="width: 100%;">Add to Cart</button>
+                                            <button style="width: 100%;" product-id='<?php echo $row['product_id'] ?>' id="details-product" class="btn add-to-cart-btn"><i class="lni lni-cart"></i> Add to Cart</button>
                                         </div>
                                     </div>
                                 </div>

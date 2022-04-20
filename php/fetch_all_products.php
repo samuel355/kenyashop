@@ -13,7 +13,7 @@
             $pro_title = $row['product_title'];
             $pro_price = $row['product_price'];
             $pro_image = $row['product_image'];
-            $cat_name = $row["cat_title"];
+            $cat_name = $row["product_cat_title"];
             
             echo '
                 <div class="col-lg-4 col-md-6 col-12">

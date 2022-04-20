@@ -7,7 +7,7 @@
 ?>
 <body>
 
-<?php include_once 'include/preloader.php' ?> 
+<?php // include_once 'include/preloader.php' ?> 
 
 <?php include_once 'include/header.php' ?>
 
@@ -42,7 +42,7 @@
 
 <section class="checkout-wrapper section">
     <div class="container">
-        <form>
+        <form id="checkout-payment-form">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="checkout-steps-form-style-1">
@@ -54,10 +54,10 @@
                                         <label>Name</label>
                                         <div class="row">
                                             <div class="col-md-6 form-input form">
-                                                <input type="text" value="<?php echo $user_row['firstname'] ?>" >
+                                                <input name="first_name" id="first_name" type="text" value="<?php echo $user_row['firstname'] ?>" >
                                             </div>
                                             <div class="col-md-6 form-input form">
-                                                <input type="text" value="<?php echo $user_row['lastname'] ?>" >
+                                                <input name="last_name" id="last_name" type="text" value="<?php echo $user_row['lastname'] ?>" >
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="single-form form-default">
                                         <label>Email Address</label>
                                         <div class="form-input form">
-                                            <input type="text" value="<?php echo $user_row['email'] ?>" >
+                                            <input name="email" id="email" type="text" value="<?php echo $user_row['email'] ?>" >
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                                     <div class="single-form form-default">
                                         <label>Phone Number</label>
                                             <div class="form-input form">
-                                            <input type="text" value="<?php echo $user_row['mobile'] ?>" >
+                                            <input id="phone" name="phone" type="text" value="<?php echo $user_row['mobile'] ?>" >
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="single-form form-default">
                                         <label>Residential Address</label>
                                         <div class="form-input form">
-                                            <input type="text" value="<?php echo $user_row['address'] ?>" >
+                                            <input id="address" name="address" type="text" value="<?php echo $user_row['address'] ?>" >
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="single-form form-default">
                                         <label>City</label>
                                         <div class="form-input form">
-                                            <input type="text" placeholder="City">
+                                            <input id="city" name="city" type="text" placeholder="City">
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                     <div class="single-form form-default">
                                         <label>Digital Address</label>
                                         <div class="form-input form">
-                                            <input type="text" placeholder="Digital Address ">
+                                            <input id="digital_address" name="digital_address" type="text" placeholder="Digital Address ">
                                         </div>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@
                                     <div class="single-form form-default">
                                         <label>Country</label>
                                         <div class="form-input form">
-                                            <input type="text" placeholder="Country">
+                                            <input id="country" name="country" type="text" placeholder="Country">
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                                     <div class="single-form form-default">
                                         <label>Region</label>
                                         <div class="form-input form">
-                                            <input type="text" placeholder="Region">
+                                            <input id="region" name="region" type="text" placeholder="Region">
                                         </div>
                                     </div>
                                 </div>
@@ -156,16 +156,14 @@
                     <div class="checkout-sidebar">
                         <div class="checkout-sidebar-coupon">
                             <p>Apply Coupon to get discount!</p>
-                            <form action="#">
-                                <div class="single-form form-default">
-                                    <div class="form-input form">
-                                        <input type="text" placeholder="Coupon Code">
-                                    </div>
-                                    <div class="button">
-                                        <button class="btn">apply</button>
-                                    </div>
+                            <div class="single-form form-default">
+                                <div class="form-input form">
+                                    <input type="text" placeholder="Coupon Code">
                                 </div>
-                            </form>
+                                <div class="button">
+                                    <button class="btn">apply</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="checkout-sidebar-price-table mt-30">
                             <h5 class="title text-center" style="color: #e63946; font-weight: bold">PRICE SUMMARY</h5>
@@ -173,24 +171,28 @@
                                 <div class="total-price">
                                     <p class="value">Total Quantity</p>
                                     <p class="price"><?php echo $quantity ?></p>
+                                    <input type="hidden" name="quantity" id="quantity" value="<?php echo $quantity ?>">
                                 </div>
                                 <div class="total-price shipping">
                                     <p class="value">Items Price</p>
                                     <p class="price">GHS. <?php echo number_format($total_price) ?></p>
+                                    <input type="hidden" name="item_price" id="item_price" value="<?php echo $total_price ?>">
                                 </div>
                                 <div class="total-price discount">
                                     <p class="value">Delivery</p>
                                     <p class="price">GHS. 10.00</p>
+                                    <input type="hidden" name="delivery" id="delivery" value="10">
                                 </div>
                             </div>
                             <div class="total-payable">
                                 <div class="payable-price">
                                     <p style="font-weight: bold; color: #e63946;" class="value">Total Price:</p>
                                     <p style="font-weight: bold; color: #e63946;" class="price">GHS. <?php echo number_format($total_price + 10) ?></p>
+                                    <input type="hidden" name="total_price" id="total_price" value="<?php echo $total_price + 10 ?>">
                                 </div>
                             </div>
                             <div class="price-table-btn button">
-                                <input type="submit" name="checkout-final" class="btn" value="Pay GHS.  <?php echo number_format($total_price) ?>" >
+                                <input onclick="payWithPaystack()" type="submit" name="checkout-final" class="btn" value="Pay GHS.  <?php echo number_format($total_price +10) ?>" >
                             </div>
                         </div>
                     </div>
@@ -204,3 +206,44 @@
 
 <?php include_once 'include/script.php' ?>
 <script src="actions.js"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script> 
+<script>
+    const paymentForm = document.getElementById('checkout-payment-form');
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+
+    function payWithPaystack(e) {
+        e.preventDefault();
+        let handler = PaystackPop.setup({
+            key: 'pk_test_7ecb0ab49db164af0b248a6e96e6f44cf9a7491b', // Replace with your public key
+            email: document.getElementById("email").value,
+            amount: document.getElementById("total_price").value * 100,
+            currency: 'GHS',
+            ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            // label: "Optional string that replaces customer email"
+
+            onClose: function(){
+                alert('Transaction was not completed, window closed.');
+            },
+
+            callback: function(response){
+                //let message = 'Payment complete! Reference: ' + response.reference;
+                //alert(message);
+                var formData = $('#checkout-payment-form').serialize();
+                $.ajax({
+                    url: 'php/verify_transaction.php',
+                    method: 'get',
+                    data: formData.push(response.reference),
+
+                    success: function (response) {
+                        if(response == 'success'){
+                            location.href = 'success-payment.php'
+                        }
+                    }
+                });
+                
+               
+            }
+        });
+        handler.openIframe();
+    }
+</script>

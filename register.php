@@ -34,7 +34,7 @@
                         <p>Registration takes less than a minute but gives you full control over your orders.</p>
                     </div>
                    
-                    <form action="" method="POST" class="row registration-form">
+                    <form method="POST" class="row registration-form">
 
                         <div class="error-container" style="display: none;">
                             <p class="alert text-center alert-danger error-text"></p>
@@ -105,34 +105,25 @@
 <script src="actions.js"></script>
 
 <script>
-
-    const form = document.querySelector(".registration-form"),
-    continueBtn = document.querySelector(".register-button"),
-    errorContainer = document.querySelector(".error-container"),
-    errorText = document.querySelector(".error-text");
-
-    form.onsubmit = (e) => {
+    //Edit Client Modal
+    $('.registration-form').on('submit', function (e) {
         e.preventDefault();
-    }
-
-    continueBtn.onclick = () => {
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/register.php", true);
-        xhr.onload = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    let data = xhr.response;
-                    if (data === "success") {
-                        location.href = "index.php";
-                    } else {
-                        errorContainer.style.display = "block";
-                        errorText.textContent = data;
-                        $('.error-container').fadeOut(6000);
-                    }
+  
+        $.ajax({
+            url: 'php/register.php',
+            type: 'POST',
+            data: $('.registration-form').serialize(),
+            success: function(data) {
+                if(data == 'success'){
+                    location.href = "store.php"
+                }else{
+                    $('.error-container').css('display', 'block')
+                    $('.error-text').html(data)
                 }
+            },
+            error: function() {
+                alert('Something is wrong');
             }
-        }
-        let formData = new FormData(form);
-        xhr.send(formData);
-    }
+        });
+    });
 </script>

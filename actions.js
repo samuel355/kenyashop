@@ -100,23 +100,6 @@ $(document).ready(function() {
 
     });
 
-    $("body").delegate(".category-selected", "click", function(event) {
-        $("#category_items").html("<p class='text-center'>Loading...</p>");
-        event.preventDefault();
-        var cid = $(this).attr('cid');
-
-        $.ajax({
-            url: "action.php",
-            method: "POST",
-            data: { category_selected: 1, cat_id: cid },
-            success: function(data) {
-                $("#category_items").html(data);
-                $(this).css({ 'font-size': '18px', 'color': 'red' });
-            }
-
-        })
-
-    })
 
     $("body").delegate(".categoryhome", "click", function(event) {
         $("#get_product").html("<h3>Loading...</h3>");
@@ -246,7 +229,25 @@ $(document).ready(function() {
         })
     })
 
-
+    //Add product to cart from product details page
+    $("body").delegate("#details-product", "click", function(e) {
+        e.preventDefault();
+        var product_id = $(this).attr("product-id");
+        var row = $(this).parent().parent().parent();
+        var quantity = row.find('.product-quantity').val();
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: { addToCartFromDetails: 1, product_id: product_id, quantity: quantity },
+            success: function(data) {
+                count_item();
+                getCartItem();
+                if (data == 'exist') {
+                    alert('Product Already in Cart! View Product in Cart to edit')
+                }
+            }
+        })
+    })
 
     //Get User Information before checkout end here
 
@@ -264,7 +265,7 @@ $(document).ready(function() {
                     count_item();
                     getCartItem();
                     if (data == 'exist') {
-                        alert('Product Already in Cart')
+                        alert('Product Already in Cart! View Product in Cart to edit')
                     }
                 }
             })

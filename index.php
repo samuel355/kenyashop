@@ -1,5 +1,4 @@
 <?php include_once 'include/head.php' ;
-session_start();
 // AKYEAMASTER.COM
 ?>
 <body>

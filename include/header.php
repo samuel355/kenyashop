@@ -27,7 +27,6 @@
                     <div class="top-middle">
                         <ul class="useful-links">
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="about-us.php">All Products</a></li>
                         </ul>
                     </div>
                 </div>

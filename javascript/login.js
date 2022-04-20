@@ -23,7 +23,6 @@ continueBtn.onclick = () => {
                 } else {
                     errorContainer.style.display = "block";
                     errorText.textContent = data;
-                    //$('.error-container').fadeOut(6000);
                 }
             }
         }

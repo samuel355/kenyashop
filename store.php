@@ -34,12 +34,19 @@
 						<h3>All Categories</h3>
 						<nav>
 							<ul class="list" class="nav nav-tabs" id="nav-tab" role="tablist">
+								<li type='button'>
+									<a  href='javascript:void()' class='all-products'>
+										<span> </span>
+											All Products
+										<small class='qty'> </small>
+									</a>
+								</li>
 						
 								<?php
 									include_once "php/config.php";
 									$category_query = "SELECT * FROM categories";
 		
-									$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
+									$run_query = mysqli_query($con, $category_query) or die(mysqli_error($con));
 									if(mysqli_num_rows($run_query) > 0){
 										$i=1;
 										while($row = mysqli_fetch_array($run_query)){
@@ -47,19 +54,18 @@
 											$cid = $row["cat_id"];
 											$cat_name = $row["cat_title"];
 											$sql = "SELECT COUNT(*) AS count_items FROM products WHERE product_cat=$i";
-											$query = mysqli_query($con,$sql);
+											$query = mysqli_query($con, $sql);
 											$row = mysqli_fetch_array($query);
-											$count=$row["count_items"];
+											$count = $row["count_items"];
 											$i++;
 											
 											echo "
 													
 												<li type='button'>
-																
 													<a cid='$cid' href='javascript:void()' class='category-selected'>
-														<span  ></span>
+														<span> </span>
 														$cat_name
-														<small class='qty'>($count)</small>
+														<small class='qty'></small>
 													</a>
 												</li>
 												
@@ -155,6 +161,7 @@
 
 <?php include_once "include/script.php" ?>
 <script src="actions.js"></script>
+
 <script>
 	//Auto Load Data From Database
 	var limit = 9;
@@ -213,4 +220,48 @@
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhr.send("searchTerm=" + searchTerm);
 	}
+
+	//Fetch all products
+	$("body").delegate(".all-products", "click", function(event) {
+        $("#category_items").html("<p class='text-center'>Loading...</p>");
+        event.preventDefault();
+
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: { all_products: 1 },
+            success: function(data) {
+                $("#category_items").html(data);
+                $(this).css({ 'font-size': '18px', 'color': 'red' });
+                if (data == '') {
+                    $("#category_items").html('No products found with this');
+                }
+            }
+
+        })
+    })
+
+	//Get Selected category
+	$("body").delegate(".category-selected", "click", function(event) {
+        $("#category_items").html("<p class='text-center'>Loading...</p>");
+        event.preventDefault();
+        var cid = $(this).attr('cid');
+
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: { category_selected: 1, cat_id: cid },
+            success: function(data) {
+                if (data == 'empty') {
+                    $("#category_items").html('No products found with this category');
+                } else {
+                    $("#category_items").html(data);
+                    $(this).css({ 'font-size': '18px', 'color': 'red' });
+                }
+            }
+
+        })
+
+    });
+	
 </script>
