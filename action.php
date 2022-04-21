@@ -513,7 +513,7 @@ if (isset($_POST["Common"])) {
 								<p>Quantity</p>
 							</div>
 							<div class="col-lg-2 col-md-2 col-12">
-								<p>Price</p>
+								<p>Unit Price</p>
 							</div>
 							<div class="col-lg-2 col-md-2 col-12">
 								<p>Subtotal (GHS.)</p>
@@ -554,11 +554,11 @@ if (isset($_POST["Common"])) {
 									<input class="form-control p-2 qty" type="text" value="'.$qty.'" >
 								</div>
 							</div>
-							<div class="col-lg-2 col-md-2 col-12 m-1">
-								<input class="form-control p-2 price" type="text" value="'.$product_price.'" readonly="readonly" >
+							<div class="col-lg-2 col-md-2 col-12">
+								<input class="form-control p-2 price" style="background: #d3d3d3; color: black; font-weight: medium" type="text" value="'.$product_price.'" readonly="readonly" >
 							</div>
 							<div class="col-lg-2 col-md-2 col-12">
-								<input type="text" class="form-control p-2 total" value="'.$product_price.'" readonly="readonly">
+								<input type="text" class="form-control p-2 total" style="background: #d3d3d3; color: black; font-weight: medium" value="'.$product_price.'" readonly="readonly">
 							</div>
 							<div class="col-lg-3 col-md-3 col-12">
 								<a href="javascript:void(0)" style="width: 70px; height: 35px; border-radius: 2%; font-size: 12px; align-text: center; display: none " class="remove-item update" update_id="'.$product_id.'"> Update <i class="lni lni-refresh"></i></a>

@@ -312,16 +312,18 @@ $(document).ready(function() {
     	and then show the result into class .net_total
     */
     $("body").delegate(".qty", "keyup", function(event) {
-            //$('.ready-to-checkout').attr({ 'disable': 'disable' });
+            //$('.ready-to-checkout').attr('disabled': 'disabled' );
             event.preventDefault();
             var row = $(this).parent().parent().parent();
             var price = row.find('.price').val();
             var qty = row.find('.qty').val();
             if (isNaN(qty)) {
-                alert('type a number');
+                alert('Quantity must be a number');
+                qty = 1;
             };
             if (qty < 1) {
-                alert('quantity must be one or more');
+                alert('Quantity must be a positive number');
+                $('.ready-to-checkout').attr('disabled', 'disabled');
             };
             price = parseInt(price);
             qty = parseInt(qty);
@@ -368,6 +370,7 @@ $(document).ready(function() {
             success: function(data) {
                 $('.cart-badge').html(data);
                 checkOutDetails();
+                getCartItem();
             }
         })
     })
@@ -384,6 +387,7 @@ $(document).ready(function() {
             success: function(data) {
                 $('.cart-badge').html(data);
                 getCartItem();
+                checkOutDetails();
             }
         })
     })

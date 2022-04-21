@@ -53,12 +53,37 @@
 
                 }
 
-                if($query_insert1){
+                //Select and count products in orders and insert into database(order-products)
+                $select_data = "SELECT a.order_id, a.product_id, a.qty, a.reference_code, a.status, b.user_id, b.unique_id, b.items_price, b.delivery, b.discount, b.total_price, b.reference_code FROM orders a, orders_info b WHERE a.reference_code = b.reference_code AND a.unique_id = '{$user_unique_id}'";
+                $query_data = mysqli_query($con, $select_data);
 
-                    //Select and count products in orders and insert into database(order-products)
-                    echo 'success';
-                }else{
-                    echo 'error inserting into orders';
+                if(mysqli_num_rows($query_data) > 0){
+                    while($details = mysqli_fetch_assoc($query_data)){
+
+                        $order_id = $details['order_id'];
+                        $product_id = $details['product_id'];
+                        $qty = $details['qty'];
+                        $db_reference_code = $details['reference_code'];
+                        $status = $details['status'];
+                        $db_unique_id = $details['unique_id'];
+                        $db_user_id = $details['user_id'];
+                        $items_price = $details['items_price'];
+                        $db_delivery = $details['delivery'];
+                        $db_discount = $details['discount'];
+                        $db_total_price = $details['total_price'];
+
+                        //insert into oder products
+                        $sql_insert = "INSERT INTO order_products(order_id, product_id, qty, items_price, delivery, discount, total_price, user_id, unique_id, payment_code, status )
+                                VALUES('{$order_id}', '{$product_id}', '{$qty}', '{$item_price}', '{$db_delivery}', '{$db_discount}', '{$db_total_price}', '{$db_user_id}', '{$db_unique_id}', '{$db_reference_code}', '{$status}' )";
+                        $sql_inserted = mysqli_query($con, $sql_insert);
+                        
+                    }
+                    if($sql_inserted){
+                        //delete user cart
+                        $delete = "DELETE FROM cart WHERE user_id = '{$user_id}' ";
+                        $delete_qr = mysqli_query($con, $delete);
+                        echo 'success';
+                    }
                 }
 
             }else{
