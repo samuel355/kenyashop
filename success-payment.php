@@ -1,5 +1,11 @@
 <?php include_once 'include/head.php' ?>
 <body>
+<?php
+    if(isset($_GET['successPaid'])){
+        $referenceCode = $_GET['successPaid'];
+        echo $referenceCode;
+    }
+?>
 <?php include_once 'include/preloader.php' ?>
 
 

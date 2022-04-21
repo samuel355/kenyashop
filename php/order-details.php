@@ -38,6 +38,7 @@
         }else if($region === 'select'){
             echo "Enter Region";
         }else{
+            //Fetch Data Into Database -Order Info
             echo 'success';
         }
     }

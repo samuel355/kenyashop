@@ -585,21 +585,34 @@
 
     function payWithPaystack(e) {
         e.preventDefault();
+        //create .env
+        const apiKey = "pk_test_7ecb0ab49db164af0b248a6e96e6f44cf9a7491b"  // Replace with your public key
         let handler = PaystackPop.setup({
-            key: 'pk_test_7ecb0ab49db164af0b248a6e96e6f44cf9a7491b', // Replace with your public key
+            key: apiKey, 
             email: document.getElementById("email").value,
             amount: document.getElementById("total_price").value * 100,
             currency: 'GHS',
             ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
             // label: "Optional string that replaces customer email"
-
+            metadata: {
+                custom_fields: [
+                    {
+                        firstname: 'samuel osei adi',
+                        lastname: 'adjj',
+                        emal: 'asamud@gak.com',
+                        phone: '93080830'
+                    }
+                ]
+            },
             onClose: function(){
                 alert('Transaction was not completed, window closed.');
             },
 
             callback: function(response){
-                //let message = 'Payment complete! Reference: ' + response.reference;
+                const data = response.reference;
+                let message = 'Payment complete! Reference: ' + response.reference;
                 //alert(message);
+                window.location.href = 'success-payment.php?successPaid='+data;
                
             }
         });

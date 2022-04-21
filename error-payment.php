@@ -12,7 +12,7 @@
                     <h2>Your Payment was not Successfully</h2>
                     <p>Sorry Try Again Later</p>
                     <div class="button">
-                        <a href="index.php" class="btn">Visit Store to buy products</a>
+                        <a href="cart.php" class="btn">Visit Store to buy products</a>
                     </div>
                 </div>
             </div>
