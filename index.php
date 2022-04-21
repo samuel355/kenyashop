@@ -7,7 +7,6 @@
 
 <?php include_once 'include/header.php' ?>
 
-
 <section class="hero-area">
     <div class="container">
         <div class="row">
