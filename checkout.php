@@ -579,6 +579,7 @@
 <?php include_once 'include/script.php' ?>
 <script src="actions.js"></script>
 <script src="https://js.paystack.co/v1/inline.js"></script> 
+
 <script>
     const paymentForm = document.getElementById('checkout-payment-form');
     paymentForm.addEventListener("submit", payWithPaystack, false);
@@ -586,33 +587,65 @@
     function payWithPaystack(e) {
         e.preventDefault();
         //create .env
-        const apiKey = "pk_test_7ecb0ab49db164af0b248a6e96e6f44cf9a7491b"  // Replace with your public key
+        const apiKey = "pk_test_7ecb0ab49db164af0b248a6e96e6f44cf9a7491b",  // Replace with your public key
+
+            user_id = '<?php echo $_SESSION['uid'] ?>',
+            user_unique_id = '<?php echo $_SESSION['unique_id'] ?>',
+            first_name = document.getElementById("first-name").value,
+            last_name = document.getElementById("last-name").value,
+            email = document.getElementById("email").value,
+            phone = document.getElementById("phone").value,
+            address = document.getElementById("address").value,
+            city = document.getElementById("city").value,
+            country = document.getElementById("country").value,
+            region = document.getElementById("region").value,
+            quantity = document.getElementById("quantity").value,
+            item_price = document.getElementById("item_price").value,
+            delivery = document.getElementById("delivery").value,
+            total_price = document.getElementById("total_price").value;
+
         let handler = PaystackPop.setup({
             key: apiKey, 
-            email: document.getElementById("email").value,
+
             amount: document.getElementById("total_price").value * 100,
             currency: 'GHS',
             ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
             // label: "Optional string that replaces customer email"
-            metadata: {
-                custom_fields: [
-                    {
-                        firstname: 'samuel osei adi',
-                        lastname: 'adjj',
-                        emal: 'asamud@gak.com',
-                        phone: '93080830'
-                    }
-                ]
-            },
             onClose: function(){
                 alert('Transaction was not completed, window closed.');
             },
 
             callback: function(response){
                 const data = response.reference;
-                let message = 'Payment complete! Reference: ' + response.reference;
+                //let message = 'Payment complete! Reference: ' + response.reference;
                 //alert(message);
-                window.location.href = 'success-payment.php?successPaid='+data;
+                //window.location.href = 'success-payment.php?successPaid='+data;
+                $.ajax({
+                    method: 'GET',
+                    url: 'php/check-pay.php',
+                    data: {
+                        ref: data,
+                        email: email,
+                        user_id: user_id,
+                        user_unique_id: user_unique_id,
+                        first_name: first_name,
+                        last_name: last_name,
+                        address: address,
+                        city: city,
+                        country: country,
+                        region: region,
+                        quantity: quantity,
+                        item_price: item_price,
+                        delivery: delivery,
+                        total_price: total_price,
+                    },
+
+                    success: function(data){
+                        if(data === 'success'){
+                            window.location.href = 'success-payment.php'
+                        }
+                    }
+                })
                
             }
         });
