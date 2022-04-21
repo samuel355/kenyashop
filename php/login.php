@@ -26,7 +26,8 @@ if(!empty($email) && !empty($password)){
     //if user record is available in database then $count will be equal to 1
     if($count === 1 AND $utype === 'user' AND $user_pass === $enc_pass){
         $_SESSION["uid"] = $row["user_id"];
-        $_SESSION["name"] = $row["first_name"];
+        $_SESSION["user"] = 'user';
+        $_SESSION["unique_id"] = $row['unique_id'];
 
         $ip_add = getenv("REMOTE_ADDR");
 
@@ -37,8 +38,9 @@ if(!empty($email) && !empty($password)){
         }  
 
     }else if($count === 1 AND $utype === 'admin' AND $user_pass === $enc_pass){
-        $_SESSION["uid"] = $row["admin_id"];
-        $_SESSION["name"] = $row["admin_name"];
+        $_SESSION["uid"] = $row["user_id"];
+        $_SESSION["user"] = 'admin';
+        $_SESSION["unique_id"] = $row['unique_id'];
         $ip_add = getenv("REMOTE_ADDR");
         //we have created a cookie in login_form.php page so if that cookie is available means user is not login
         //if user is login from page we will send login_success

@@ -7,7 +7,7 @@ $(document).ready(function() {
     producthome();
 
 
-    //cat() is a funtion fetching category record from database whenever page is load
+    //cat() is a function fetching category record from database whenever page is load
     function cat() {
         $.ajax({
             url: "action.php",
@@ -312,7 +312,7 @@ $(document).ready(function() {
     	and then show the result into class .net_total
     */
     $("body").delegate(".qty", "keyup", function(event) {
-            $('#checkout-and-shop-buttons').css({ 'display': 'none' });
+            //$('.ready-to-checkout').attr({ 'disable': 'disable' });
             event.preventDefault();
             var row = $(this).parent().parent().parent();
             var price = row.find('.price').val();

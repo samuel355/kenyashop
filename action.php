@@ -26,7 +26,7 @@ if(isset($_POST["category"])){
 					<a href='store.php?cid=".$cid."'>
 						<span  ></span>
 						$cat_name
-						<small class='qty'>($count)</small>
+						<small class='qty'></small>
 					</a>
 				</li>
 				
@@ -57,14 +57,14 @@ if(isset($_POST["brand"])){
             $count=$row["count_items"];
             $i++;
 			echo "
-                    <div type='button' class='btn navbar-btn selectBrand' bid='$bid'>
-									
-									<a href='#'>
-										<span ></span>
-										$brand_name
-										<small >($count)</small>
-									</a>
-								</div>
+				<div type='button' class='btn navbar-btn selectBrand' bid='$bid'>
+					
+					<a href='#'>
+						<span ></span>
+						$brand_name
+						<small >($count)</small>
+					</a>
+				</div>
 			";
 		}
 		echo "</div>";
@@ -506,10 +506,8 @@ if (isset($_POST["Common"])) {
 				<form method="post" action="check_logged_in.php">
 					<div class="cart-list-title" id="cart">
 						<div class="row">
-							<div class="col-lg-1 col-md-1 col-12">
-							</div>
-							<div class="col-lg-4 col-md-3 col-12">
-								<p>Product Name</p>
+							<div class="col-lg-3 col-md-3 col-12">
+								<p>Product Details</p>
 							</div>
 							<div class="col-lg-2 col-md-2 col-12">
 								<p>Quantity</p>
@@ -519,9 +517,6 @@ if (isset($_POST["Common"])) {
 							</div>
 							<div class="col-lg-2 col-md-2 col-12">
 								<p>Subtotal (GHS.)</p>
-							</div>
-							<div class="col-lg-1 col-md-2 col-12">
-								<p>Remove</p>
 							</div>
 						</div>
 					</div>
@@ -540,11 +535,9 @@ if (isset($_POST["Common"])) {
 				echo 
 					'
 					<div class="cart-single-list">
-						<div class="row align-items-center">
-							<div class="col-lg-1 col-md-1 col-12">
-								<a href="product-details.php?p='.$product_id.'"><img src="product_images/'.$product_image.'" alt="#"></a>
-							</div>
-							<div class="col-lg-4 col-md-3 col-12">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-12">
+								<a href="product-details.php?p='.$product_id.'"><img class="img-fluid" style="width: 100px; height: 100px; object-fit: contain; " src="product_images/'.$product_image.'" alt="#"></a>
 								<h5 class="product-name"><a href="product-details.php?p='.$product_id.'">
 									'.$product_title.'</a></h5>
 								<p class="product-des">
@@ -561,15 +554,15 @@ if (isset($_POST["Common"])) {
 									<input class="form-control p-2 qty" type="text" value="'.$qty.'" >
 								</div>
 							</div>
-							<div class="col-lg-2 col-md-2 col-12">
+							<div class="col-lg-2 col-md-2 col-12 m-1">
 								<input class="form-control p-2 price" type="text" value="'.$product_price.'" readonly="readonly" >
 							</div>
 							<div class="col-lg-2 col-md-2 col-12">
 								<input type="text" class="form-control p-2 total" value="'.$product_price.'" readonly="readonly">
 							</div>
-							<div class="col-lg-1 col-md-2 col-12">
-								<a href="javascript:void(0)" class="remove-item update" update_id="'.$product_id.'"><i class="lni lni-refresh">update</i></a>
-								<a remove_id="'.$product_id.'" class="remove-item remove" href="javascript:void(0)"><i class="lni lni-close"> </i></a>
+							<div class="col-lg-3 col-md-3 col-12">
+								<a href="javascript:void(0)" style="width: 70px; height: 35px; border-radius: 2%; font-size: 12px; align-text: center; display: none " class="remove-item update" update_id="'.$product_id.'"> Update <i class="lni lni-refresh"></i></a>
+								<a remove_id="'.$product_id.'" style="width: 70px; height: 35px; border-radius: 2%; font-size: 12px; align-text: center"  class="remove-item remove" href="javascript:void(0)">Remove<i class="lni "> </i></a>
 							</div>
 						</div>
 					</div>
@@ -595,7 +588,7 @@ if (isset($_POST["Common"])) {
 											</ul>
 											<div class="button" id="checkout-and-shop-buttons">
 												<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
-												<input class="btn" type="submit" id="submit" name="login_user_with_product" value="Ready to Checkout"> 
+												<input class="btn ready-to-checkout" type="submit" id="submit" name="login_user_with_product" value="Ready to Checkout"> 
 												<a href="store.php" class="btn btn-alt">Continue shopping</a>
 											</div>
 										</div>
