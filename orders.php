@@ -56,7 +56,7 @@
                 while($ref_code = mysqli_fetch_assoc($ref_data)){
                     $success_ref = $ref_code['reference_code'];
                             
-                    $select_orders = "SELECT a.product_id, a.qty, a.items_price, a.delivery, a.discount, a.total_price, a.status, a.order_date, a.payment_code, b.product_id, b.product_image, b.product_title, b.product_price, b.color, b.size FROM order_products a, products b WHERE a.product_id = b.product_id AND payment_code = '{$success_ref}' AND user_id = '{$this_user}' ";
+                    $select_orders = "SELECT a.product_id, a.qty, a.items_price, a.delivery, a.discount, a.total_price, a.status, a.order_date, a.order_id, a.payment_code, b.product_id, b.product_image, b.product_title, b.product_price, b.color, b.size FROM order_products a, products b WHERE a.product_id = b.product_id AND payment_code = '{$success_ref}' AND user_id = '{$this_user}' ";
                     $query_orders = mysqli_query($con, $select_orders);
 
                     if(mysqli_num_rows($query_orders) == 0 ){
@@ -131,7 +131,7 @@
                                                 Quantity : <em class="text-dark"> '.$product_qty.' </em>
                                             </p>
                                             <p class="product-name mt-2">
-                                                Unit Price : <em class="text-dark">GHS. '.$items_price.' </em>
+                                                Unit Price : <em class="text-dark">GHS. '.$product_price.' </em>
                                             </p>
                                             <p class="product-name mt-2">
                                                 Total : <em class="text-dark">GHS. '.$price.' </em>
