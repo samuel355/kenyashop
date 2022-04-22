@@ -30,52 +30,7 @@
                 </div>
                 <!-- /Page Header -->
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="card dash-widget">
-                            <div class="card-body">
-                                <span class="dash-widget-icon"><i class="fa fa-cubes"></i></span>
-                                <div class="dash-widget-info">
-                                    <h3>112</h3>
-                                    <span>Products</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="card dash-widget">
-                            <div class="card-body">
-                                <span class="dash-widget-icon"><i class="fa fa-usd"></i></span>
-                                <div class="dash-widget-info">
-                                    <h3>44</h3>
-                                    <span>Revenue</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="card dash-widget">
-                            <div class="card-body">
-                                <span class="dash-widget-icon"><i class="fa fa-shopping-bag"></i></span>
-                                <div class="dash-widget-info">
-                                    <h3>37</h3>
-                                    <span>Orders</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="card dash-widget">
-                            <div class="card-body">
-                                <span class="dash-widget-icon"><i class="fa fa-users"></i></span>
-                                <div class="dash-widget-info">
-                                    <h3>218</h3>
-                                    <span>Users</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php include_once 'include/dash.php' ?>
 
                 <div class="row">
                     <div class="col-md-6 d-flex">
@@ -165,95 +120,78 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                <table class="table custom-table mb-0">
+                                    <table class="table custom-table mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Email</th>
+                                                <th>Order ID</th>
+                                                <th>User Details</th>
                                                 <th>Quantity</th>
-                                                <th>Price</th>
+                                                <th>Total (GHS.)</th>
+                                                <th>Status</th>
+                                                <th class="text-right">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    Samue Osei Adu
-                                                </td>
-                                                <td>barrycuda@example.com</td>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    1750
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Samue Osei Adu
-                                                </td>
-                                                <td>barrycuda@example.com</td>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    1750
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Samue Osei Adu
-                                                </td>
-                                                <td>barrycuda@example.com</td>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    1750
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Samue Osei Adu
-                                                </td>
-                                                <td>barrycuda@example.com</td>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    1750
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Samue Osei Adu
-                                                </td>
-                                                <td>barrycuda@example.com</td>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    1750
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Samue Osei Adu
-                                                </td>
-                                                <td>barrycuda@example.com</td>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    1750
-                                                </td>
-                                            </tr>
+                                            <?php
+                                                include_once "php/config.php";
+                                                $query = "SELECT * FROM orders_info ORDER BY order_id DESC LIMIT 5";
+                                                $output = ' ';
+                                                $query_data = mysqli_query($con, $query);
+                                                if(mysqli_num_rows($query_data) == 0 ){
+                                                    $output .= '
+                                                        <tr colspan = "3">
+                                                            <td>No Orders have been make yet</td>
+                                                        </tr>
+                                                    ';
+                                                }else{
+                                                    while($row = mysqli_fetch_assoc($query_data)){
+                                                        $order_id = $row['order_id'];
+                                                        $firstname = $row['firstname'];
+                                                        $lastname = $row['lastname'];
+                                                        $total_qty = $row['total_qty'];
+                                                        $total_price = $row['total_price'];
+                                                        $reference_code = $row['reference_code'];
+                                                        $status = $row['status'];
+                                                        $order_date = $row['order_date'];
+
+                                                        $output .= '
+                                                            <tr>
+                                                                <td>
+                                                                    <h2 >
+                                                                        <a href="order-detail?ord_id='.$order_id.'"> '.$reference_code.' </a>
+                                                                    </h2>
+                                                                </td>
+                                                                <td>'.$firstname." ".$lastname.'</td>
+                                                                <td>'.$total_qty.'</td>
+                                                                <td>'.$total_price.'</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <a href="" class="btn btn-white btn-sm btn-rounded" data-toggle="dropdown" aria-expanded="false">'.$status.'</a>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <div class="dropdown dropdown-action">
+                                                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        ';
+                                                    }
+                                                }
+                                                echo $output;
+                                            ?>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
 
                             <div class="card-footer">
-                                <a href="#">View all Orders</a>
+                                <a href="orders.php">View all Orders</a>
                             </div>
                             
                         </div>
