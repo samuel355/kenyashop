@@ -61,6 +61,8 @@
                                 cameras</a></p>
                             <h3 class="price">GHS. <?php echo number_format($row['product_price'] ) ?> .00</h3>
                             <p class="info-text"><?php echo $row['product_desc'] ?></p>
+                            <p class="info-text"> Color: <span class="text-dark"> <?php echo $row['color'] ?></span></p>
+                            <p class="info-text"> Size: <span class="text-dark"> <?php echo $row['size'] ?></span></p>
                             <div class="bottom-content">
                                 <div class="row align-items-end">
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -91,7 +93,8 @@
                     </div>
                 </div>
             </div>
-            <div class="product-details-info">
+            
+            <div class="product-details-info" style="display: none;">
                 <div class="single-block">
                     <div class="row">
                         <div class="col-lg-6 col-12">

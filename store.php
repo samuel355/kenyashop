@@ -17,13 +17,11 @@
 				<ul class="breadcrumb-nav">
 					<li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
 					<li><a href="javascript:void(0)">Shop</a></li>
-					<li>Store</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <section class="product-grids section">
 	<div class="container">

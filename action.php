@@ -440,10 +440,10 @@ if (isset($_POST["Common"])) {
 
 	if (isset($_SESSION["uid"])) {
 		//When user is logged in this query will execute
-		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
+		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image, a.size, a.color, b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
 	}else{
 		//When user is not logged in this query will execute
-		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.ip_add='$ip_add' AND b.user_id < 0";
+		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image, a.size, a.color, b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.ip_add='$ip_add' AND b.user_id < 0";
 	}
 	
 	$query = mysqli_query($con,$sql);
@@ -529,6 +529,8 @@ if (isset($_POST["Common"])) {
 				$product_title = $row["product_title"];
 				$product_price = $row["product_price"];
 				$product_image = $row["product_image"];
+				$color = $row["color"];
+				$size = $row["size"];
 				$cart_item_id = $row["id"];
 				$qty = $row["qty"];
 
@@ -538,11 +540,11 @@ if (isset($_POST["Common"])) {
 						<div class="row">
 							<div class="col-lg-3 col-md-3 col-12">
 								<a href="product-details.php?p='.$product_id.'"><img class="img-fluid" style="width: 100px; height: 100px; object-fit: contain; " src="product_images/'.$product_image.'" alt="#"></a>
-								<h5 class="product-name"><a href="product-details.php?p='.$product_id.'">
+								<h5 class="product-name mt-3"><a href="product-details.php?p='.$product_id.'">
 									'.$product_title.'</a></h5>
-								<p class="product-des">
-									<span><em>Type:</em> Mirrorless</span>
-									<span><em>Color:</em> Black</span>
+								<p class="product-des mt-3">
+									<span><em">Color:</em> '.$color.'</span>
+									<span><em">Size:</em> '.$size.'</span>
 								</p>
 							</div>
 
