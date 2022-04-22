@@ -91,7 +91,7 @@
                                                             <tr>
                                                                 <td>
                                                                     <h2 >
-                                                                        <a href="order-detail?ord_id='.$user_id.'"> '.$user_id.' </a>
+                                                                        <a href="user-profile.php?user_id='.$user_id.'"> '.$user_id.' </a>
                                                                     </h2>
                                                                 </td>
                                                                 <td>'.$firstname." ".$lastname.'</td>
