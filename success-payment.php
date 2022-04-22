@@ -18,7 +18,7 @@
                     <h2>Your Payment is made Successfully</h2>
                     <p>Thanks for your purchase.</p>
                     <div class="button">
-                        <a href="index.php" class="btn">View your orders</a>
+                        <a href="orders.php" class="btn">View your orders</a>
                     </div>
                 </div>
             </div>

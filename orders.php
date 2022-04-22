@@ -23,7 +23,7 @@
                 <ul class="breadcrumb-nav">
                     <li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
                     <li><a href="store.php">Shop</a></li>
-                    <li>Orders</li>
+                    <li>Orders</li> 
                 </ul>
             </div>
         </div>
@@ -39,9 +39,9 @@
                     $this_user = $_SESSION['uid'];
                     $output = "";
 
-                    //$select_orders = "SELECT a.product_id a.qty, a.items_price, a.delivery, a.discount, a.total_price, a.user_id, a.payment_code, a.status, b.product_image, b.product_id FROM order_products a, products b WHERE a.product_id = b.product_id AND a.user_id = '{$this_user}' ";
-                    $select_orders = "SELECT a.product_id, a.qty, a.items_price, a.delivery, a.discount, a.total_price, a.payment_code, a.status, b.product_image, b.product_title, b.product_price, b.product_id FROM order_products a, products b WHERE a.product_id = b.product_id AND a.user_id = '{$this_user}' ";
+                    $select_orders = "SELECT a.product_id, a.qty, a.items_price, a.delivery, a.discount, a.total_price, a.payment_code, a.status, b.product_image, b.product_title, b.product_price, b.product_id, b.color, b.size, c.reference_code, c.order_date FROM order_products a, products b, orders_info c WHERE a.product_id = b.product_id AND a.payment_code = c.reference_code ";
                     $query_orders = mysqli_query($con, $select_orders);
+                    
                     if(mysqli_num_rows($query_orders) < 1){
                         $output .= '
                             <div class="row">
@@ -51,6 +51,9 @@
                             </div>
                         ';
                     }else{
+                        $d_row = mysqli_fetch_assoc($query_orders);
+                        $check_reference = $d_row['reference_code'];
+
                         $output .= '
                             <h5 class="card-title">Product Details</h5>        
                         ';
@@ -73,43 +76,46 @@
                             $discount = $row['discount'];
                             $total_price = $row['total_price'];
                             $status = $row['status'];
+                            $color = $row['color'];
+                            $size = $row['size'];
+                            $order_date = $row['order_date'];
                             $price = $product_qty * $product_price;
 
 
                             $output .= '
-                                
-                                    <div class="col-md-6 col-12">
-                                        <div class="mb-3" style="border-bottom: 2px solid #d3d3d3">
-                                            <div class="row">
-                                                <div class="col-12 text-dark font-weight-bold" style="font-weight: bold; font-size: 14px">'.$i.'</div>
-                                            </div>
-                                            <a href="javascript:void()">
-                                                <img class="img-fluid" style="width: 100px; height: 100px; object-fit: contain; " src="product_images/'.$product_image.'" alt="#"></a>
-                                            <p class="product-name mt-3">
-                                                <a href="javascript:void()">
-                                                    '.$product_title.'
-                                                </a>
-                                            </p>
-                                            <p class="product-name mt-3">
-                                                Quantity : <em class="text-dark"> '.$product_qty.' </em>
-                                            </p>
-                                            <p class="product-name mt-3">
-                                                Unit Price : <em class="text-dark">GHS. '.$product_price.' </em>
-                                            </p>
-                                            <p class="product-name mt-3">
-                                                Total : <em class="text-dark">GHS. '.$price.' </em>
-                                            </p>
-                                            <p class="product-name mt-3">
-                                                Size : <em class="text-dark"> Medium Size </em>
-                                            </p>
-                                            <p class="product-name mt-3">
-                                                Color : <em class="text-dark"> Brown </em>
-                                            </p>
+                                <div class="col-md-6 col-12">
+                                    <div class="mb-3" style="border-bottom: 2px solid #d3d3d3">
+                                        <div class="row">
+                                            <div class="col-12 text-dark font-weight-bold" style="font-weight: bold; font-size: 14px">'.$i.'</div>
                                         </div>
+                                        <a href="javascript:void()">
+                                            <img class="img-fluid" style="width: 100px; height: 100px; object-fit: contain; " src="product_images/'.$product_image.'" alt="#"></a>
+                                        <p class="product-name mt-3">
+                                            <a href="javascript:void()">
+                                                '.$product_title.'
+                                            </a>
+                                        </p>
+                                        <p class="product-name mt-3">
+                                            Quantity : <em class="text-dark"> '.$product_qty.' </em>
+                                        </p>
+                                        <p class="product-name mt-3">
+                                            Unit Price : <em class="text-dark">GHS. '.$product_price.' </em>
+                                        </p>
+                                        <p class="product-name mt-3">
+                                            Total : <em class="text-dark">GHS. '.$price.' </em>
+                                        </p>
+                                        <p class="product-name mt-3">
+                                            Size : <em class="text-dark"> '.$size.' </em>
+                                        </p>
+                                        <p class="product-name mt-3">
+                                            Color : <em class="text-dark"> '.$color.' </em>
+                                        </p>
                                     </div>
-                               
+                                </div>
                                    
                             ';
+
+                            
                         }
                         $output .= '  </div>';
 
@@ -135,7 +141,7 @@
                                 </div>
                                 <div class="col-md-6 col-12 mt-5">
                                     <h5 class="card-title">Order Details</h5>
-                                    <p>Order Date: <em class="text-dark"> 23/30/2022 at 3:14pm</em> </p>
+                                    <p>Order Date: <em class="text-dark"> '.$order_date.'</em> </p>
                                     <p class="product-name mt-3">
                                         Order ID : <em class="text-dark"> '.$payment_code.' </em>
                                     </p>
@@ -153,8 +159,6 @@
                     echo $output;
                 ?>
                 
-                
-
             </div>
         </div>
     </div>
