@@ -21,7 +21,7 @@
                     <a href="orders.php"><i style="font-size: 18px; color: grey" class="fa fa-shopping-bag"></i> <span>Orders</span></a>
                 </li>
                 <li>
-                    <a href="#"><i style="font-size: 18px; color: grey" class="fa fa-users"></i> <span>Users</span></a>
+                    <a href="users.php"><i style="font-size: 18px; color: grey" class="fa fa-users"></i> <span>Users</span></a>
                 </li>
                 <li class="mt-4">
                     <a href="#"><i style="font-size: 20px; color: grey" class="text-danger fa fa-close"></i> <span>Logout</span></a>
