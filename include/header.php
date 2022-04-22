@@ -47,7 +47,7 @@
                                             <a class="text-white user-dropdown-button" id="user-dropdown" href="#">Hello '.$row["firstname"].'</a>
                                             <ul class="user-dropdown user-dropdown-show">
                                                 <li><a href="#">Account</a></li>
-                                                <li><a href="#">Orders</a></li>
+                                                <li><a href="orders.php">Orders</a></li>
                                                 <li><a href="logout.php">Logout</a></li>
                                             </ul>
                                         </li>

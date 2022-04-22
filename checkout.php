@@ -560,12 +560,12 @@
                             <div class="total-payable">
                                 <div class="payable-price">
                                     <p style="font-weight: bold; color: #e63946;" class="value">Total Price:</p>
-                                    <p style="font-weight: bold; color: #e63946;" class="price">GHS. <?php echo number_format($total_price + 10) ?></p>
+                                    <p style="font-weight: bold; color: #e63946;" class="price">GHS. <?php echo number_format($total_price + 20) ?></p>
                                     <input type="hidden" name="total_price" id="total_price" value="<?php echo $total_price + 20 ?>">
                                 </div>
                             </div>
                             <div class="price-table-btn button">
-                                <input onclick="payWithPaystack()" type="submit" name="checkout-final" class="btn" value="Pay GHS.  <?php echo number_format($total_price +10) ?>" >
+                                <input onclick="payWithPaystack()" type="submit" name="checkout-final" class="btn" value="Pay GHS.  <?php echo number_format($total_price +20) ?>" >
                             </div>
                         </div>
                     </div>
