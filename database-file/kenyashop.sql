@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2022 at 02:21 PM
+-- Generation Time: Apr 22, 2022 at 12:47 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.5
 
@@ -145,19 +145,20 @@ CREATE TABLE `logs` (
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `unique_id` varchar(255) NOT NULL,
   `product_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
-  `trx_id` varchar(255) NOT NULL,
-  `p_status` varchar(20) NOT NULL
+  `reference_code` varchar(255) NOT NULL,
+  `status` varchar(200) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `qty`, `trx_id`, `p_status`) VALUES
-(1, 12, 7, 1, '07M47684BS5725041', 'Completed'),
-(2, 14, 2, 1, '07M47684BS5725041', 'Completed');
+INSERT INTO `orders` (`order_id`, `user_id`, `unique_id`, `product_id`, `qty`, `reference_code`, `status`) VALUES
+(22, 9, '854379552', 80, 2, '199897794', 'Pending'),
+(23, 9, '854379552', 79, 1, '199897794', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -179,11 +180,20 @@ CREATE TABLE `orders_info` (
   `region` varchar(255) NOT NULL,
   `total_qty` int(15) DEFAULT NULL,
   `items_price` int(15) DEFAULT NULL,
+  `delivery` int(10) DEFAULT NULL,
+  `discount` int(10) DEFAULT NULL,
   `total_price` int(15) NOT NULL,
   `reference_code` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL DEFAULT 'Pending',
   `order_date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders_info`
+--
+
+INSERT INTO `orders_info` (`order_id`, `user_id`, `unique_id`, `firstname`, `lastname`, `email`, `phone`, `address`, `city`, `country`, `region`, `total_qty`, `items_price`, `delivery`, `discount`, `total_price`, `reference_code`, `status`, `order_date`) VALUES
+(26, 9, '854379552', 'Samuel', 'Osei', 'addsamuel355@gmail.com', '0542374844', 'Kumasi Ghana', 'Kumasi', 'Ghana (+233)', 'Ashanti', 3, 750, 20, 0, 770, '199897794', 'Pending', '22-04-22 At 12:45:01');
 
 -- --------------------------------------------------------
 
@@ -196,17 +206,23 @@ CREATE TABLE `order_products` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `qty` int(15) DEFAULT NULL,
-  `amt` int(15) DEFAULT NULL
+  `items_price` int(15) DEFAULT NULL,
+  `delivery` int(15) NOT NULL,
+  `discount` int(15) NOT NULL,
+  `total_price` int(15) NOT NULL,
+  `user_id` int(15) NOT NULL,
+  `unique_id` varchar(200) NOT NULL,
+  `payment_code` varchar(250) NOT NULL,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `order_products`
 --
 
-INSERT INTO `order_products` (`order_pro_id`, `order_id`, `product_id`, `qty`, `amt`) VALUES
-(73, 1, 1, 1, 5000),
-(74, 1, 4, 2, 64000),
-(75, 1, 8, 1, 40000);
+INSERT INTO `order_products` (`order_pro_id`, `order_id`, `product_id`, `qty`, `items_price`, `delivery`, `discount`, `total_price`, `user_id`, `unique_id`, `payment_code`, `status`) VALUES
+(97, 22, 80, 2, 750, 20, 0, 770, 9, '854379552', '199897794', 'Pending'),
+(98, 23, 79, 1, 750, 20, 0, 770, 9, '854379552', '199897794', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -362,8 +378,7 @@ ALTER TABLE `orders`
 -- Indexes for table `orders_info`
 --
 ALTER TABLE `orders_info`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `order_products`
@@ -405,7 +420,7 @@ ALTER TABLE `admin_info`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -429,19 +444,19 @@ ALTER TABLE `logs`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `orders_info`
 --
 ALTER TABLE `orders_info`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `order_pro_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `order_pro_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `products`
