@@ -74,7 +74,7 @@
 
                         //insert into oder products
                         $sql_insert = "INSERT INTO order_products(order_id, product_id, qty, items_price, delivery, discount, total_price, user_id, unique_id, payment_code, status, order_date )
-                                VALUES('{$order_id}', '{$product_id}', '{$qty}', '{$items_price}', '{$db_delivery}', '{$db_discount}', '{$db_total_price}', '{$db_user_id}', '{$db_unique_id}', '{$db_reference_code}', '{$status}', '{$order_date}' )";
+                                VALUES('{$order_id}', '{$product_id}', '{$qty}', '{$items_price}', '{$db_delivery}', '{$db_discount}', '{$db_total_price}', '{$db_user_id}', '{$db_unique_id}', '{$reference_code}', '{$status}', '{$order_date}' )";
                         $sql_inserted = mysqli_query($con, $sql_insert);
                         
                     }

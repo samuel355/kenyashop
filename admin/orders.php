@@ -58,7 +58,7 @@
                                             <tr>
                                                 <th>Order ID</th>
                                                 <th>User Details</th>
-                                                <th>Quantity</th>
+                                                <th>Total Quantity</th>
                                                 <th>Total (GHS.)</th>
                                                 <th>Order Date</th>
                                                 <th>Status</th>
@@ -92,7 +92,7 @@
                                                             <tr>
                                                                 <td>
                                                                     <h2 >
-                                                                        <a href="order-detail?ord_id='.$order_id.'"> '.$reference_code.' </a>
+                                                                        <a href="order-details.php?ord_id='.$reference_code.'"> '.$reference_code.' </a>
                                                                     </h2>
                                                                 </td>
                                                                 <td>'.$firstname." ".$lastname.'</td>
