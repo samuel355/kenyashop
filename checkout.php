@@ -242,24 +242,6 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="popup-modal" tabindex="-1" aria-labelledby="popup-modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center text-danger">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <?php include_once 'include/footer.php'  ?>
 
 <?php include_once 'include/script.php' ?>
