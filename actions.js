@@ -244,7 +244,7 @@ $(document).ready(function() {
                 getCartItem();
                 if (data == 'exist') {
                     $('#popup-modal').modal('show');
-                    $('.modal-body').html('Product Already in Cart! View Product in Cart to edit');
+                    $('.modal-body').html('Product Already in Cart! Edit product in cart');
                 }
             }
         })
@@ -267,7 +267,7 @@ $(document).ready(function() {
                     getCartItem();
                     if (data == 'exist') {
                         $('#popup-modal').modal('show');
-                        $('.modal-body').html('Product Already in Cart! View Product in Cart to edit');
+                        $('.modal-body').html('Product Already in Cart! Edit product in cart');
                     }
                 }
             })
