@@ -32,7 +32,17 @@
     </div>
 </div>
 
+
+
 <?php include_once 'include/footer.php'  ?>
 
 <?php include_once 'include/script.php' ?>
 <script src="actions.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.test').on('click', function(){
+            
+            $('#exampleModal').modal('show');
+        })
+    })
+</script>

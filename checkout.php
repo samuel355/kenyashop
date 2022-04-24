@@ -240,6 +240,26 @@
     </div>
 </section>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="popup-modal" tabindex="-1" aria-labelledby="popup-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center text-danger">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <?php include_once 'include/footer.php'  ?>
 
 <?php include_once 'include/script.php' ?>
@@ -420,9 +440,11 @@
         }
 
         if($.trim($('#first-name').val()).length == 0 || $.trim($('#last-name').val()).length == 0 || $.trim($('#email').val()).length == 0 || !mail_format.test($('#email').val()) || $.trim($('#phone').val()).length == 0 || $.trim($('#phone').val()).length < 10 || $.trim($('#address').val()).length == 0 || $.trim($('#city').val()).length == 0 || $.trim($('#country').val()) == 'select' || $.trim($('#region').val()) == 'select'){
-            var errMsg = "Fill all fields correctly";
-            $('.error-text').css('display', 'block');
-            $('.error-text').html(errMsg).fadeOut(8000);
+            var errMsg = "Check and Fill all fields correctly";
+            //$('.error-text').css('display', 'block');
+            //$('.error-text').html(errMsg).fadeOut(8000);
+            $('#popup-modal').modal('show');
+            $('.modal-body').html(errMsg);
         }else{
             $('.payment-block').css('display', 'block');
             $('.order-detail').fadeOut(2000);
