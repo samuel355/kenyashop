@@ -426,12 +426,16 @@
         }else{
             $('.payment-block').css('display', 'block');
             $('.order-detail').fadeOut(2000);
+            jQuery('html,body').animate({scrollTop:0},2000);
         }
     })
 
     //Apply Coupon
+
+
     $('#coupon-btn').on('click', function(){
         $('.coupon-error').css('display', 'block');
         $('.coupon-error').html('Wrong coupon code').fadeOut(5000);
+        
     })
 </script>

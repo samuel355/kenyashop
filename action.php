@@ -551,16 +551,16 @@ if (isset($_POST["Common"])) {
 							<input type="hidden" name="product_id[]" value="'.$product_id.'"/>
 				            <input type="hidden" name="" value="'.$cart_item_id.'"/>
 
-							<div class="col-lg-2 col-md-2 col-12">
+							<div class="col-lg-2 col-md-2 col-12 mt-1">
 								<div class="count-input">
-									<input class="form-control p-2 qty" type="text" value="'.$qty.'" >
+									<input title="quantity" class="form-control p-2 qty" type="text" value="'.$qty.'" >
 								</div>
 							</div>
-							<div class="col-lg-2 col-md-2 col-12">
-								<input class="form-control p-2 price" style="background: #d3d3d3; color: black; font-weight: medium" type="text" value="'.$product_price.'" readonly="readonly" >
+							<div class="col-lg-2 col-md-2 col-12 mt-1">
+								<input title="Unit Price" class="form-control p-2 price" style="background: #d3d3d3; color: black; font-weight: medium" type="text" value="'.$product_price.'" readonly="readonly" >
 							</div>
-							<div class="col-lg-2 col-md-2 col-12">
-								<input type="text" class="form-control p-2 total" style="background: #d3d3d3; color: black; font-weight: medium" value="'.$product_price.'" readonly="readonly">
+							<div class="col-lg-2 col-md-2 col-12 mt-1">
+								<input title="Total Price" type="text" class="form-control p-2 total" style="background: #d3d3d3; color: black; font-weight: medium" value="'.$product_price.'" readonly="readonly">
 							</div>
 							<div class="col-lg-3 col-md-3 col-12">
 								<a href="javascript:void(0)" style="width: 70px; height: 35px; border-radius: 2%; font-size: 12px; align-text: center; display: none " class="remove-item update" update_id="'.$product_id.'"> Update <i class="lni lni-refresh"></i></a>
