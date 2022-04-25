@@ -36,7 +36,6 @@ if(isset($_POST["category"])){
 	}
 }
 
-
 if(isset($_POST["brand"])){
 	$brand_query = "SELECT * FROM brands";
 	$run_query = mysqli_query($con,$brand_query);
