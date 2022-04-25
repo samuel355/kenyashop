@@ -129,7 +129,7 @@
                                     <ul class="shopping-list cart-list" id="cart_product">
                                         
                                     </ul>
-                                    <div class="bottom">
+                                    <div class="bottom mt-3">
                                         <div class="button">
                                             <a href="cart.php" class="btn animate">Edit Cart</a>
                                         </div>

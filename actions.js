@@ -245,6 +245,8 @@ $(document).ready(function() {
                 if (data == 'exist') {
                     $('#popup-modal').modal('show');
                     $('.modal-body').html('Product Already in Cart! Edit product in cart');
+                } else {
+                    alert(data)
                 }
             }
         })
@@ -320,11 +322,13 @@ $(document).ready(function() {
             var price = row.find('.price').val();
             var qty = row.find('.qty').val();
             if (isNaN(qty)) {
-                alert('Quantity must be a number');
+                $('#popup-modal').modal('show');
+                $('.modal-body').html('Quantity must be a number');
                 qty = 1;
             };
             if (qty < 1) {
-                alert('Quantity must be a positive number');
+                $('#popup-modal').modal('show');
+                $('.modal-body').html('Quantity must be one or more');
                 $('.ready-to-checkout').attr('disabled', 'disabled');
             };
             price = parseInt(price);

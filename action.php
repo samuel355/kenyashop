@@ -36,6 +36,7 @@ if(isset($_POST["category"])){
 	}
 }
 
+
 if(isset($_POST["brand"])){
 	$brand_query = "SELECT * FROM brands";
 	$run_query = mysqli_query($con,$brand_query);
@@ -319,7 +320,6 @@ if(isset($_POST['addToCartFromDetails'])){
 		$sql = "SELECT * FROM cart WHERE p_id = '$product_id' AND user_id = '$user_id'";
 		$run_query = mysqli_query($con, $sql);
 		if(mysqli_num_rows($run_query) > 0){
-			//Todo: Update cart when product exist
 			echo "exist";
 			exit();
 		}

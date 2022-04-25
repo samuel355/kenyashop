@@ -82,7 +82,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="col-lg-6 col-md-6 col-12 mt-3">
                                         <div class="button cart-button">
                                             <button style="width: 100%;" product-id='<?php echo $row['product_id'] ?>' id="details-product" class="btn add-to-cart-btn"><i class="lni lni-cart"></i> Add to Cart</button>
                                         </div>
