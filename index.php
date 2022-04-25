@@ -169,13 +169,12 @@
             <?php  
             
                 include_once "php/config.php";
-                $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id ORDER BY product_id DESC LIMIT 8";
+                $product_query = "SELECT * FROM products ORDER BY product_id DESC LIMIT 8";
                 $run_query = mysqli_query($con,$product_query);
                 if(mysqli_num_rows($run_query) > 0){
                     while($row = mysqli_fetch_array($run_query)){
                         $pro_id    = $row['product_id'];
-                        $pro_cat   = $row['product_cat'];
-                        $pro_brand = $row['product_brand'];
+                        $pro_cat   = $row['product_cat_title'];
                         $pro_title = $row['product_title'];
                         $pro_price = $row['product_price'];
                         $pro_image = $row['product_image'];
@@ -192,11 +191,12 @@
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <span class="category">'.$cat_name.'</span>
+                                        
                                         <h4 class="title">
                                             <a href="product-details.php?p='.$pro_id.'">'.$pro_title.'</a>
                                         </h4>
-                                            <ul class="review">
+                                        <span class="category">'.$pro_cat.'</span>
+                                        <ul class="review">
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
@@ -267,13 +267,12 @@
                     <?php  
             
                         include_once "php/config.php";
-                        $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id ORDER BY product_id ASC LIMIT 3";
+                        $product_query = "SELECT * FROM products ORDER BY product_id ASC LIMIT 3";
                         $run_query = mysqli_query($con,$product_query);
                         if(mysqli_num_rows($run_query) > 0){
                             while($row = mysqli_fetch_array($run_query)){
                                 $pro_id    = $row['product_id'];
-                                $pro_cat   = $row['product_cat'];
-                                $pro_brand = $row['product_brand'];
+                                $pro_cat   = $row['product_cat_title'];
                                 $pro_title = $row['product_title'];
                                 $pro_price = $row['product_price'];
                                 $pro_image = $row['product_image'];
@@ -290,11 +289,11 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">'.$cat_name.'</span>
                                                 <h4 class="title">
                                                     <a href="product-details.php?p='.$pro_id.'">'.$pro_title.'</a>
                                                 </h4>
-                                                    <ul class="review">
+                                                <span class="category">'.$pro_cat.'</span>
+                                                <ul class="review">
                                                     <li><i class="lni lni-star-filled"></i></li>
                                                     <li><i class="lni lni-star-filled"></i></li>
                                                     <li><i class="lni lni-star-filled"></i></li>
@@ -362,7 +361,7 @@
                                         </ul>
                                         <div class="price">
                                             <span>GHS. '.$pro_price.'.00</span>
-                                            <span class="discount-price">GHS. '.$pro_price*0.1.'.00</span>
+                                            <span class="discount-price">GHS. '.$pro_price*1.5.'.00</span>
                                         </div>
                                         <p>Quality discounted '.$pro_title.'... Up to 10% discount <p>
                                     </div>
