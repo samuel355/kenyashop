@@ -159,7 +159,13 @@
 
 <?php include_once "include/script.php" ?>
 <script src="actions.js"></script>
-
+<script>
+	$(document).ready(function(){
+		$('html, body').animate({
+        	scrollTop: $(".tab-content").offset().top
+    	}, 1500);
+	})
+</script>
 <script>
 	//Auto Load Data From Database
 	var limit = 9;
