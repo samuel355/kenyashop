@@ -169,7 +169,7 @@
                                                                 </td>
                                                                 <td>'.$firstname." ".$lastname.'</td>
                                                                 <td>'.$total_qty.'</td>
-                                                                <td>'.$total_price.'</td>
+                                                                <td>'.number_format($total_price).'</td>
                                                                 <td>
                                                                     <div class="dropdown">
                                                                         <a href="" class="btn btn-white btn-sm btn-rounded" data-toggle="dropdown" aria-expanded="false">'.$status.'</a>

@@ -103,7 +103,7 @@
                                                                 </td>
                                                                 <td>'.$firstname." ".$lastname.'</td>
                                                                 <td>'.$total_qty.'</td>
-                                                                <td>'.$total_price.'</td>
+                                                                <td>'.number_format($total_price).'</td>
                                                                 <td>
                                                                     '.$order_date.'
                                                                 </td>
