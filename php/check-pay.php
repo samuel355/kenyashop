@@ -37,6 +37,7 @@
             $qr_insert = "INSERT INTO orders_info(user_id, unique_id, firstname, lastname, email, phone, address, city, country, region, total_qty, items_price, delivery, discount, total_price, reference_code, order_date)
                         VALUES('{$user_id}', '{$user_unique_id}', '{$first_name}', '{$last_name}', '{$email}', '{$phone}', '{$address}', '{$city}', '{$country}', '{$region}', '{$quantity}', '{$item_price}', '{$delivery}', '$discount', '{$total_price}', '{$reference_code}', '{$order_date}')";
             $query_insert = mysqli_query($con, $qr_insert);
+
             if($query_insert){
                 //Select cart products with this user id and insert into orders
                 $qr_select = "SELECT * FROM cart WHERE user_id = '{$user_id}' ";
@@ -54,7 +55,7 @@
                 }
 
                 //Select and count products in orders and insert into database(order-products)
-                $select_data = "SELECT a.order_id, a.product_id, a.qty, a.reference_code, a.status, b.user_id, b.unique_id, b.items_price, b.delivery, b.discount, b.total_price, b.reference_code FROM orders a, orders_info b WHERE a.reference_code = b.reference_code AND a.unique_id = '{$user_unique_id}'";
+                $select_data = "SELECT a.order_id, a.product_id, a.qty, a.reference_code, a.status, b.user_id, b.unique_id, b.items_price, b.delivery, b.discount, b.total_price, b.reference_code FROM orders a, orders_info b WHERE a.reference_code = '{$reference_code}' AND b.reference_code = '{$reference_code}' AND a.unique_id = '{$user_unique_id}'";
                 $query_data = mysqli_query($con, $select_data);
 
                 if(mysqli_num_rows($query_data) > 0){
@@ -63,7 +64,7 @@
                         $order_id = $details['order_id'];
                         $product_id = $details['product_id'];
                         $qty = $details['qty'];
-                        $db_reference_code = $details['reference_code'];
+                        $ck_reference_code = $reference_code;
                         $status = $details['status'];
                         $db_unique_id = $details['unique_id'];
                         $db_user_id = $details['user_id'];
@@ -74,7 +75,7 @@
 
                         //insert into oder products
                         $sql_insert = "INSERT INTO order_products(order_id, product_id, qty, items_price, delivery, discount, total_price, user_id, unique_id, payment_code, status, order_date )
-                                VALUES('{$order_id}', '{$product_id}', '{$qty}', '{$items_price}', '{$db_delivery}', '{$db_discount}', '{$db_total_price}', '{$db_user_id}', '{$db_unique_id}', '{$reference_code}', '{$status}', '{$order_date}' )";
+                                VALUES('{$order_id}', '{$product_id}', '{$qty}', '{$items_price}', '{$db_delivery}', '{$db_discount}', '{$db_total_price}', '{$db_user_id}', '{$db_unique_id}', '{$ck_reference_code}', '{$status}', '{$order_date}' )";
                         $sql_inserted = mysqli_query($con, $sql_insert);
                         
                     }
