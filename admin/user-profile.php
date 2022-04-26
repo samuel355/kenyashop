@@ -1,5 +1,11 @@
 <?php include_once "include/head.php" ?>
 <?php
+    session_start();
+    if($_SESSION['user'] != 'admin'){
+        header('location: ../index.php');
+    }
+?>
+<?php
     include_once "php/config.php";
     if(isset($_GET['user_id'])){
         $unique_id = $_GET['user_id'];
@@ -42,7 +48,7 @@
                             <h3 class="page-title">Edit User</h3>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Edit Product</li>
+                                <li class="breadcrumb-item active">Edit User</li>
                             </ul>
                         </div>
                     </div>

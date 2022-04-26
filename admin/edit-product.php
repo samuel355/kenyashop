@@ -1,5 +1,11 @@
 <?php include_once "include/head.php" ?>
 <?php
+    session_start();
+    if($_SESSION['user'] != 'admin'){
+        header('location: ../index.php');
+    }
+?>
+<?php
     include_once "php/config.php";
     if(isset($_GET['pid'])){
         $product_id = $_GET['pid'];

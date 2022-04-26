@@ -1,4 +1,10 @@
 <?php include_once "include/head.php" ?>
+<?php
+    session_start();
+    if($_SESSION['user'] != 'admin'){
+        header('location: ../index.php');
+    }
+?>
 <body>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
@@ -40,6 +46,9 @@
                                 <input type="text" class="form-control floating">
                                 <label class="focus-label">Search Users</label>
                             </div>
+                        </div>
+                        <div class="col-md-5 float-right ml-auto">
+                            <a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_user"><i class="fa fa-plus"></i> Add User</a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +139,7 @@
             <!-- /Page Content -->
 
             <!-- Add Client Modal -->
-            <div id="add_client" class="modal custom-modal fade" role="dialog">
+            <div id="add_user" class="modal custom-modal fade" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
