@@ -262,138 +262,54 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-md-12 col-12">
-                <div class="row">
-                    <?php  
-            
-                        include_once "php/config.php";
-                        $product_query = "SELECT * FROM products ORDER BY product_id ASC LIMIT 3";
-                        $run_query = mysqli_query($con,$product_query);
-                        if(mysqli_num_rows($run_query) > 0){
-                            while($row = mysqli_fetch_array($run_query)){
-                                $pro_id    = $row['product_id'];
-                                $pro_cat   = $row['product_cat_title'];
-                                $pro_title = $row['product_title'];
-                                $pro_price = $row['product_price'];
-                                $pro_image = $row['product_image'];
+            <?php  
+                
+                include_once "php/config.php";
+                $product_query = "SELECT * FROM products ORDER BY product_id ASC LIMIT 4";
+                $run_query = mysqli_query($con,$product_query);
+                if(mysqli_num_rows($run_query) > 0){
+                    while($row = mysqli_fetch_array($run_query)){
+                        $pro_id    = $row['product_id'];
+                        $pro_cat   = $row['product_cat_title'];
+                        $pro_title = $row['product_title'];
+                        $pro_price = $row['product_price'];
+                        $pro_image = $row['product_image'];
 
-                                $cat_name = $row["cat_title"];
+                        $cat_name = $row["cat_title"];
 
-                                echo '
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="single-product">
-                                            <div class="product-image">
-                                                <img style="width 100%; height: 40vh; object-fit: contain" src="product_images/'.$pro_image.'" alt="#">
-                                                <div class="button">
-                                                    <button pid='.$pro_id.' id="product" class="btn add-to-cart-btn"><i class="lni lni-cart"></i> Add to Cart</button>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <h4 class="title">
-                                                    <a href="product-details.php?p='.$pro_id.'">'.$pro_title.'</a>
-                                                </h4>
-                                                <span class="category">'.$pro_cat.'</span>
-                                                <ul class="review">
-                                                    <li><i class="lni lni-star-filled"></i></li>
-                                                    <li><i class="lni lni-star-filled"></i></li>
-                                                    <li><i class="lni lni-star-filled"></i></li>
-                                                    <li><i class="lni lni-star-filled"></i></li>
-                                                    <li><i class="lni lni-star"></i></li>
-                                                    <li><span>4.0 Review(s)</span></li>
-                                                </ul>
-                                                <div class="price">
-                                                    <span>GHS. '.$pro_price.'.00</span>
-                                                </div>
-                                            </div>
+                        echo '
+                            <div class="col-md-3 col-12">
+                                <div class="single-product">
+                                    <div class="product-image">
+                                        <img style="width 100%; height: 40vh; object-fit: contain" src="product_images/'.$pro_image.'" alt="#">
+                                        <div class="button">
+                                            <button pid='.$pro_id.' id="product" class="btn add-to-cart-btn"><i class="lni lni-cart"></i> Add to Cart</button>
                                         </div>
                                     </div>
-                                ';
-                            }
-                        }
-                    
-                    ?>
-                </div>
-                <div class="single-banner right" style="background-image:url('assets/images/banner/banner-3-bg.jpg');margin-top: 30px;">
-                    <div class="content">
-                        <h2>Samsung Notebook 9 </h2>
-                        <p>Flash sale - only one left in stock. hurry and get it.</p>
-                        <div class="price">
-                            <span>GHS. 1,590.00</span>
-                        </div>
-                        <div class="button">
-                            <a href="cart.php" class="btn">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-12">
-                <?php  
-                
-                    include_once "php/config.php";
-                    $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id ORDER BY product_id ASC LIMIT 1";
-                    $run_query = mysqli_query($con,$product_query);
-                    if(mysqli_num_rows($run_query) > 0){
-                        while($row = mysqli_fetch_array($run_query)){
-                            $pro_id    = $row['product_id'];
-                            $pro_cat   = $row['product_cat'];
-                            $pro_brand = $row['product_brand'];
-                            $pro_title = $row['product_title'];
-                            $pro_price = $row['product_price'];
-                            $pro_image = $row['product_image'];
-
-                            $cat_name = $row["cat_title"];
-
-                            echo '
-                                <div class="offer-content">
-                                    <div class="image">
-                                        <img src="product_images/'.$pro_image.'" alt="#">
-                                        <span class="sale-tag">-10%</span>
-                                    </div>
-                                    <div class="text">
-                                        <h2><a href="product-details.php?p='.$pro_id.'">Discounted '.$pro_title.'</a></h2>
+                                    <div class="product-info">
+                                        <h4 class="title">
+                                            <a href="product-details.php?p='.$pro_id.'">'.$pro_title.'</a>
+                                        </h4>
+                                        <span class="category">'.$pro_cat.'</span>
                                         <ul class="review">
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><span>5.0 Review(s)</span></li>
+                                            <li><i class="lni lni-star"></i></li>
+                                            <li><span>4.0 Review(s)</span></li>
                                         </ul>
                                         <div class="price">
                                             <span>GHS. '.$pro_price.'.00</span>
-                                            <span class="discount-price">GHS. '.$pro_price*1.5.'.00</span>
                                         </div>
-                                        <p>Quality discounted '.$pro_title.'... Up to 10% discount <p>
-                                    </div>
-                                    <div class="box-head">
-                                        <div style="display: none;" class="box">
-                                            <h1 id="days">000</h1>
-                                            <h2 id="daystxt">Days</h2>
-                                        </div>
-                                        <div class="box">
-                                            <h1 id="hours">00</h1>
-                                            <h2 id="hourstxt">Hours</h2>
-                                        </div>
-                                        <div class="box">
-                                            <h1 id="minutes">00</h1>
-                                            <h2 id="minutestxt">Minutes</h2>
-                                        </div>
-                                        <div class="box">
-                                            <h1 id="seconds">00</h1>
-                                            <h2 id="secondstxt">Secondes</h2>
-                                        </div>
-                                    </div>
-                                    <div style="background: rgb(204, 24, 24);" class="alert">
-                                        <h1 style="padding: 50px 80px;color: white;">We are sorry, Event ended ! </h1>
                                     </div>
                                 </div>
-                            ';
-                        }
+                            </div>
+                        ';
                     }
-                
-                ?>
-                
-            </div>
+                }
+            
+            ?>
         </div>
     </div>
 </section>
