@@ -136,7 +136,7 @@
         <div class="dropdown-menu">
             <a class="dropdown-item" href="#">My Profile</a>
             <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="logout.php">Logout</a>
         </div>
     </li>
 </ul>
@@ -148,7 +148,7 @@
     <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="#">My Profile</a>
         <a class="dropdown-item" href="#">Settings</a>
-        <a class="dropdown-item" href="#">Logout</a>
+        <a class="dropdown-item" href="logout.php">Logout</a>
     </div>
 </div>
 <!-- /Mobile Menu -->

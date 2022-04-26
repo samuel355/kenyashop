@@ -49,7 +49,7 @@
 
                 if($query_insert){
 
-                    $select_sql2 = mysqli_query($con, "SELECT * FROM users WHERE email = '{$email}'");
+                    $select_sql2 = mysqli_query($con, "SELECT * FROM users WHERE email = '{$email}' ");
                     if(mysqli_num_rows($select_sql2) > 0){
                         $result = mysqli_fetch_assoc($select_sql2);
                         $_SESSION['uid'] = $result['user_id'];

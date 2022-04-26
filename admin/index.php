@@ -1,4 +1,10 @@
 <?php include_once "include/head.php" ?>
+<?php
+    session_start();
+    if($_SESSION['user'] != 'admin'){
+        header('location: ../index.php');
+    }
+?>
 <body>
     <!-- Main Wrapper -->
     <div class="main-wrapper">

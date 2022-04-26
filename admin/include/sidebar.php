@@ -24,7 +24,7 @@
                     <a href="users.php"><i style="font-size: 18px; color: grey" class="fa fa-users"></i> <span>Users</span></a>
                 </li>
                 <li class="mt-4">
-                    <a href="#"><i style="font-size: 20px; color: grey" class="text-danger fa fa-close"></i> <span>Logout</span></a>
+                    <a href="logout.php"><i style="font-size: 20px; color: grey" class="text-danger fa fa-close"></i> <span>Logout</span></a>
                 </li>
             </ul>
         </div>
