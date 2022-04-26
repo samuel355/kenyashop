@@ -138,54 +138,69 @@
             </div>
             <!-- /Page Content -->
 
-            <!-- Add Client Modal -->
+            <!-- Add User Modal -->
             <div id="add_user" class="modal custom-modal fade" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Add Product</h5>
+                            <h5 class="modal-title">Add User</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form id="add-user-form" method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="col-form-label">Product Image <span class="text-danger">*</span></label>
-                                            <input class="form-control" type="file">
+                                            <label class="col-form-label">First Name</label>
+                                            <input name="first-name" id="first-name" class="form-control" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="col-form-label">Title</label>
-                                            <input class="form-control" type="text">
+                                            <label class="col-form-label">Last Name </label>
+                                            <input name="last-name" id="last-name" class="form-control" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="col-form-label">Price <span class="text-danger">*</span></label>
-                                            <input class="form-control" type="number">
+                                            <label class="col-form-label">Email <span class="text-danger">*</span></label>
+                                            <input name="email" id="email" class="form-control" type="email">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="col-form-label">Category <span class="text-danger">*</span> </label>
+                                            <label class="col-form-label">Phone <span class="text-danger">*</span></label>
+                                            <input name="phone" id="phone" class="form-control" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Address<span class="text-danger">*</span></label>
+                                            <input name="address" id="address" class="form-control" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Password<span class="text-danger">*</span></label>
+                                            <input name="password" id="password" class="form-control" type="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Password<span class="text-danger">*</span></label>
+                                            <input name="re-password" id="re-password" class="form-control" type="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">User Role <span class="text-danger">*</span> </label>
                                             <select class="select form-control">
-                                                <option>Men Wear</option>
-                                                <option>Women Wear</option>
-                                                <option>Women Bag</option>
-                                                <option>Men Bag</option>
-                                                <option>Men Bag</option>
-                                                <option>Sneakers</option>
+                                                <option value="select">Select</option>
+                                                <option value="user">User</option>
+                                                <option value="admin">Admin</option>
                                             </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="col-form-label">Description <span class="text-danger">*</span></label>
-                                            <textarea class="form-control" name="description" id="description" cols="30" rows="4"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -197,9 +212,9 @@
                     </div>
                 </div>
             </div>
-            <!-- /Add Client Modal -->
+            <!-- /Add User Modal -->
 
-            <!-- Edit Client Modal -->
+            <!-- Edit User Modal -->
             <div id="edit_client" class="modal custom-modal fade" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
@@ -265,9 +280,9 @@
                     </div>
                 </div>
             </div>
-            <!-- /Edit Client Modal -->
+            <!-- /Edit User Modal -->
 
-            <!-- Delete Client Modal -->
+            <!-- Delete User Modal -->
             <div class="modal custom-modal fade" id="delete_client" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -321,6 +336,14 @@
 
     <!-- Custom JS -->
     <script src="assets/js/app.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            // User
+        })
+        
+
+    </script>
 
 </body>
 
