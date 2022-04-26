@@ -17,6 +17,7 @@
         $user_id = $row['unique_id'];
         $firstname = $row['firstname'];
         $lastname = $row['lastname'];
+        $utype = $row['utype'];
         $email = $row['email'];
         $mobile = $row['mobile'];
         $address = $row['address'];
@@ -57,7 +58,7 @@
                 <div class="row">
                     <div class="col-md-12 col-12 d-flex">
                         <div class="modal-body p-5 bg-white shadow rounded-1">
-                            <form id="user-update-form">
+                            <form id="update-user-form" method="POST">
                                 <div class="row">
                                     <div style="display: none;" class="col-md-12 text-center alert alert-danger error-message">  </div>
                                 </div>
@@ -67,32 +68,49 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="col-form-label">First Name</label>
-                                                    <input name="firstname" id="firstname" value="<?php echo $firstname ?>" class="form-control" type="text">
+                                                    <input name="first-name" id="first-name" value="<?php echo $firstname ?>" class="form-control" type="text">
+                                                    <span class="text-danger first-name-error"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Last Name</label>
-                                                    <input name="lastname" id="lastname" value="<?php echo $lastname ?>" class="form-control" type="text">
+                                                    <input name="last-name" id="last-name" value="<?php echo $lastname ?>" class="form-control" type="text">
+                                                    <span class="text-danger last-name-error"></span>
                                                 </div>
                                             </div>
                                             <input type="hidden" value="<?php echo $unique_id ?>" name="unique_id">
+                                            <input type="hidden" value="<?php echo $user_id ?>" name="user_id">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Email <span class="text-danger">*</span></label>
                                                     <input id="email" name="email" value="<?php echo $email ?>" class="form-control" type="email">
+                                                    <span class="text-danger email-error"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Phone Number <span class="text-danger">*</span></label>
                                                     <input id="phone" name="phone" value="<?php echo $mobile ?>" class="form-control" type="number">
+                                                    <span class="text-danger phone-error"></span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-form-label">User Role <span class="text-danger">*</span> </label>
+                                                    <select id="reole" name="role" class="select form-control">
+                                                        <option selected value="<?php echo $utype ?>"><?php echo $utype ?></option>
+                                                        <option value="user">User</option>
+                                                        <option value="admin">Admin</option>
+                                                    </select>
+                                                    <span class="text-danger erole-error"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Address<span class="text-danger">*</span></label>
-                                                    <textarea class="form-control" name="address" id="address" cols="30" rows="4"> <?php echo $address ?> </textarea>
+                                                    <input class="form-control" name="address" id="address" value="<?php echo $address ?>" />
+                                                    <span class="text-danger address-error"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,7 +182,98 @@
             let formData = new FormData(form);
             xhr.send(formData);
         }
+    </script>
+    <script>
+        $(document).ready(function(){
+            
+            //update user
+            $("#update-user-form").on("submit", function(e) {
+                e.preventDefault();
 
+                if($.trim($('#first-name').val()).length == 0){
+                    var errorMsg = "Enter first name";
+                    $('.first-name-error').text(errorMsg);
+                    $('#first-name').css('border', '1px solid #e63946')
+                }else{
+                    errorMsg = ' ';
+                    $('.first-name-error').text(errorMsg);
+                    $('#first-name').css('border', '1px solid #d3d3d3')
+                }
+                if($.trim($('#last-name').val()).length == 0){
+                    var errorMsg = "Enter last name";
+                    $('.last-name-error').text(errorMsg);
+                    $('#last-name').css('border', '1px solid #e63946')
+                }else{
+                    errorMsg = ' ';
+                    $('.last-name-error').text(errorMsg);
+                    $('#last-name').css('border', '1px solid #d3d3d3')
+                }
+                if($.trim($('#email').val()).length == 0){
+                    var errorMsg = "Enter email address";
+                    $('.email-error').text(errorMsg);
+                    $('#email').css('border', '1px solid #e63946')
+                }else{
+                    var mail_format = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                    if(!mail_format.test($('#email').val())){
+                        errorMsg = 'Invalid Email';
+                        $('.email-error').text(errorMsg);
+                        $('#email').css('border', '1px solid #e63946');
+                    }else{
+                        errorMsg = ' ';
+                        $('.email-error').text(errorMsg);
+                        $('#email').css('border', '1px solid #d3d3d3')
+                    }
+                }
+
+                if($.trim($('#phone').val()).length == 0){
+                    var errorMsg = "Enter phone number";
+                    $('.phone-error').text(errorMsg);
+                    $('#phone').css('border', '1px solid #e63946')
+                }else{
+                    if($.trim($('#phone').val()).length < 10){
+                        errorMsg = 'Phone Number must be 10 digits';
+                        $('.phone-error').text(errorMsg);
+                        $('#phone').css('border', '1px solid #e63946');
+                    }else{
+                        errorMsg = ' ';
+                        $('.phone-error').text(errorMsg);
+                        $('#phone').css('border', '1px solid #d3d3d3')
+                    }
+                }
+
+                if($.trim($('#address').val()).length == 0){
+                    var errorMsg = "Enter address";
+                    $('.address-error').text(errorMsg);
+                    $('#address').css('border', '1px solid #e63946')
+                }else{
+                    errorMsg = ' ';
+                    $('.address-error').text(errorMsg);
+                    $('#address').css('border', '1px solid #d3d3d3')
+                }
+
+                if($.trim($('#first-name').val()).length == 0 || $.trim($('#last-name').val()).length == 0 || $.trim($('#email').val()).length == 0 || !mail_format.test($('#email').val()) || $.trim($('#phone').val()).length == 0 || $.trim($('#phone').val()).length < 10 || $.trim($('#address').val()).length == 0 ){
+                    var errMsg = "Check and Fill all fields correctly";
+                    $('.error-text').css('display', 'block');
+                    $('.error-text').html(errMsg).fadeOut(8000);
+                }else{
+                    $.ajax({
+                        url: 'php/update-user.php',
+                        method: 'POST',
+                        data: $('#update-user-form').serialize(),
+
+                        success: function(data){
+                            if(data === 'success'){
+                                alert('User updated Successfully');
+                                window.location.reload(true);
+                            }else{
+                                $('.error-text').css('display', 'block');
+                                $('.error-text').html(data).fadeOut(8000);
+                            }
+                        }
+                    })
+                }
+            })
+        })
     </script>
 </body>
 </html>
