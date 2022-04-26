@@ -151,56 +151,67 @@
                         <div class="modal-body">
                             <form id="add-user-form" method="POST">
                                 <div class="row">
+                                    <div style="display: none;" class="col-12 alert alert-danger text-center error-text"></div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">First Name</label>
                                             <input name="first-name" id="first-name" class="form-control" type="text">
+                                            <span class="text-danger first-name-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">Last Name </label>
                                             <input name="last-name" id="last-name" class="form-control" type="text">
+                                            <span class="text-danger last-name-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">Email <span class="text-danger">*</span></label>
                                             <input name="email" id="email" class="form-control" type="email">
+                                            <span class="text-danger email-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">Phone <span class="text-danger">*</span></label>
                                             <input name="phone" id="phone" class="form-control" type="number">
+                                            <span class="text-danger phone-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">Address<span class="text-danger">*</span></label>
                                             <input name="address" id="address" class="form-control" type="number">
+                                            <span class="text-danger address-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">Password<span class="text-danger">*</span></label>
                                             <input name="password" id="password" class="form-control" type="password">
+                                            <span class="text-danger password-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="col-form-label">Password<span class="text-danger">*</span></label>
+                                            <label class="col-form-label">Re-enter Password<span class="text-danger">*</span></label>
                                             <input name="re-password" id="re-password" class="form-control" type="password">
+                                            <span class="text-danger re-password-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">User Role <span class="text-danger">*</span> </label>
-                                            <select class="select form-control">
+                                            <select id="role" name="role" class="select form-control">
                                                 <option value="select">Select</option>
                                                 <option value="user">User</option>
                                                 <option value="admin">Admin</option>
                                             </select>
+                                            <span class="text-danger role-error"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -312,7 +323,6 @@
                 <div class="col-12 text-center text-muted mb-3">All Rights Reserved</div>
             </div>
 
-
         </div>
         <!-- /Page Wrapper -->
 
@@ -339,7 +349,116 @@
     <script>
         $(document).ready(function(){
 
-            // User
+            //Add User
+            $('#add-user-form').on('click', function(e){
+                e.preventDefault()
+
+                if($.trim($('#first-name').val()).length == 0){
+                    var errorMsg = "Enter your first name";
+                    $('.first-name-error').text(errorMsg);
+                    $('#first-name').css('border', '1px solid #e63946')
+                }else{
+                    errorMsg = ' ';
+                    $('.first-name-error').text(errorMsg);
+                    $('#first-name').css('border', '1px solid #d3d3d3')
+                }
+                if($.trim($('#last-name').val()).length == 0){
+                    var errorMsg = "Enter your last name";
+                    $('.last-name-error').text(errorMsg);
+                    $('#last-name').css('border', '1px solid #e63946')
+                }else{
+                    errorMsg = ' ';
+                    $('.last-name-error').text(errorMsg);
+                    $('#last-name').css('border', '1px solid #d3d3d3')
+                }
+                if($.trim($('#email').val()).length == 0){
+                    var errorMsg = "Enter your email address";
+                    $('.email-error').text(errorMsg);
+                    $('#email').css('border', '1px solid #e63946')
+                }else{
+                    var mail_format = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                    if(!mail_format.test($('#email').val())){
+                        errorMsg = 'Invalid Email';
+                        $('.email-error').text(errorMsg);
+                        $('#email').css('border', '1px solid #e63946');
+                    }else{
+                        errorMsg = ' ';
+                        $('.email-error').text(errorMsg);
+                        $('#email').css('border', '1px solid #d3d3d3')
+                    }
+                }
+
+                if($.trim($('#phone').val()).length == 0){
+                    var errorMsg = "Enter your phone number";
+                    $('.phone-error').text(errorMsg);
+                    $('#phone').css('border', '1px solid #e63946')
+                }else{
+                    if($.trim($('#phone').val()).length < 10){
+                        errorMsg = 'Phone Number must be 10 digits';
+                        $('.phone-error').text(errorMsg);
+                        $('#phone').css('border', '1px solid #e63946');
+                    }else{
+                        errorMsg = ' ';
+                        $('.phone-error').text(errorMsg);
+                        $('#phone').css('border', '1px solid #d3d3d3')
+                    }
+                }
+
+                if($.trim($('#address').val()).length == 0){
+                    var errorMsg = "Enter your address";
+                    $('.address-error').text(errorMsg);
+                    $('#address').css('border', '1px solid #e63946')
+                }else{
+                    errorMsg = ' ';
+                    $('.address-error').text(errorMsg);
+                    $('#address').css('border', '1px solid #d3d3d3')
+                }
+
+                if($.trim($('#password').val()).length == 0){
+                    var errorMsg = "Enter password";
+                    $('.password-error').text(errorMsg);
+                    $('#password').css('border', '1px solid #e63946')
+                }else{
+                    if($.trim($('#password').val()) != $.trim($('#re-password').val())){
+                        var errorMsg = "Passwords do not match";
+                        $('.password-error').text(errorMsg);
+                        $('#password').css('border', '1px solid #e63946')
+                        $('.re-password-error').text(errorMsg);
+                        $('#re-password').css('border', '1px solid #e63946')
+                    }else{
+                        if($.trim($('#password').val()).length < 5){
+                            var errorMsg = "Passwords must be more than 5 characters";
+                            $('.password-error').text(errorMsg);
+                            $('#password').css('border', '1px solid #e63946')
+                        }else{
+                            errorMsg = ' ';
+                            $('.password-error').text(errorMsg);
+                            $('#password').css('border', '1px solid #d3d3d3')
+                        }
+                    }
+                    
+                }
+
+                if($.trim($('#role').val()) == 'select'){
+                    errorMsg = 'Select user role';
+                    $('.role-error').text(errorMsg);
+                    $('#role').css('border', '1px solid #d3d3d3')
+                }else{
+                    errorMsg = '';
+                    $('.role-error').text(errorMsg);
+                    $('#role').css('border', '1px solid #d3d3d3')
+                }
+
+                if($.trim($('#first-name').val()).length == 0 || $.trim($('#last-name').val()).length == 0 || $.trim($('#email').val()).length == 0 || !mail_format.test($('#email').val()) || $.trim($('#phone').val()).length == 0 || $.trim($('#phone').val()).length < 10 || $.trim($('#address').val()).length == 0 || $.trim($('#role').val()) == 'select'){
+                    var errMsg = "Check and Fill all fields correctly";
+                    $('.error-text').css('display', 'block');
+                    $('.error-text').html(errMsg).fadeOut(8000);
+                }else{
+                    $('.payment-block').css('display', 'block');
+                    $('.order-detail').fadeOut(2000);
+                    jQuery('html,body').animate({scrollTop:0},2000);
+                }
+            })
         })
         
 
