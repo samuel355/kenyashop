@@ -246,7 +246,8 @@ $(document).ready(function() {
                     $('#popup-modal').modal('show');
                     $('.modal-body').html('Product Already in Cart! Edit product in cart');
                 } else {
-                    alert(data)
+                    $('#popup-modal').modal('show');
+                    $('.modal-body').html('Product Added successfully');
                 }
             }
         })

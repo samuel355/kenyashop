@@ -346,10 +346,7 @@ if(isset($_POST['addToCartFromDetails'])){
 		VALUES ('$product_id','$ip_add','-1','$quantity')";
 		if (mysqli_query($con,$sql)) {
 			echo "
-				<div class='alert alert-success'>
-					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<b>Your product is Added Successfully..!</b>
-				</div>
+				done
 			";
 			exit();
 		}
