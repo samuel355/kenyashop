@@ -320,25 +320,31 @@ if(isset($_POST['addToCartFromDetails'])){
 		$sql = "SELECT * FROM cart WHERE p_id = '$product_id' AND user_id = '$user_id'";
 		$run_query = mysqli_query($con, $sql);
 		if(mysqli_num_rows($run_query) > 0){
-			echo "exist";
+			$update_ = "UPDATE cart SET qty = '$quantity' WHERE p_id = '$product_id' AND user_id = '$user_id' ";
+			$update_qry = mysqli_query($con, $update_);
+			if($update_qry){
+				echo 'done';
+			}
 			exit();
 		}
 		$sql = "INSERT INTO `cart`
 		(`p_id`, `ip_add`, `user_id`, `qty`) 
-		VALUES ('$p_id','$ip_add','$user_id','1')";
+		VALUES ('$product_id','$ip_add','$user_id','1')";
 		if(mysqli_query($con,$sql)){
 			echo "
-				<div class='alert alert-success'>
-					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<b>Product is Added..!</b>
-				</div>
+				done
 			";
 		}
+
 	}else{
 		$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$product_id' AND user_id = -1";
 		$query = mysqli_query($con,$sql);
 		if (mysqli_num_rows($query) > 0) {
-			echo "exist";
+			$update_ = "UPDATE cart SET qty = '$quantity' WHERE p_id = '$product_id' AND ip_add = '$ip_add' ";
+			$update_qry = mysqli_query($con, $update_);
+			if($update_qry){
+				echo 'done';
+			}
 			exit();
 		}
 		$sql = "INSERT INTO `cart`
