@@ -116,8 +116,9 @@
                                                                     <div class="dropdown dropdown-action">
                                                                         <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_order"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#view_order"><i class="fa fa-pencil m-r-5"></i> View Order</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_order"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                                                         </div>
                                                                     </div>
                                                                 </td>
@@ -138,7 +139,7 @@
             </div>
             <!-- /Page Content -->
 
-            <!-- Add Client Modal -->
+            <!-- View Order Modal -->
             <div id="add_client" class="modal custom-modal fade" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
@@ -197,10 +198,10 @@
                     </div>
                 </div>
             </div>
-            <!-- /Add Client Modal -->
+            <!-- /View Order Modal -->
 
-            <!-- Edit Client Modal -->
-            <div id="edit_client" class="modal custom-modal fade" role="dialog">
+            <!-- Edit Order Modal -->
+            <div id="edit_order" class="modal custom-modal fade" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -265,9 +266,9 @@
                     </div>
                 </div>
             </div>
-            <!-- /Edit Client Modal -->
+            <!-- /Edit Order Modal -->
 
-            <!-- Delete Client Modal -->
+            <!-- Delete Order Modal -->
             <div class="modal custom-modal fade" id="delete_client" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -290,7 +291,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /Delete Client Modal -->
+            <!-- /Delete Order Modal -->
 
             <!-- Footer -->
             <div class="row">
