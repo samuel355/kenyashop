@@ -98,6 +98,7 @@
                                                     $product_title = $data['product_title'];
                                                     $product_price = $data['product_price'];
                                                     $color = $data['color'];
+                                                    $status = $data['status'];
                                                     $size = $data['size'];
                                                     $order_date = $data['order_date'];
                                                     $product_quantity = $data['qty'];
@@ -179,8 +180,18 @@
                                                                         <tr>
                                                                             <td><strong>Total Amount Paid </strong> <span class="float-right"><strong>GHS. '.number_format($total_price).'.00</strong></span></td>
                                                                         </tr>
+                                                                        <tr class="bg-light">
+                                                                            <td><strong>Status </strong> <span class="float-right"><strong>'.$status.'.</strong></span></td>
+                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
+                                                                <div class="modal-btn delete-action">
+                                                                    <div class="row">
+                                                                        <div class="col-6 text-center">
+                                                                            <a href="#" edit-id="'.$order_id.'" class="btn btn-secondary cancel-btn edit-order-main">Update Status</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -265,12 +276,12 @@
             </div>
             <!-- /Add Client Modal -->
 
-            <!-- Edit Client Modal -->
-            <div id="edit_client" class="modal custom-modal fade" role="dialog">
+            <!-- Edit Order Modal -->
+            <div id="edit_order" class="modal custom-modal fade" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Edit Client</h5>
+                            <h5 class="modal-title">Change Status</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -278,60 +289,27 @@
                         <div class="modal-body">
                             <form>
                                 <div class="row">
-                                    <div class="col-12 text-center">
-                                        <div class="profile-img-wrap edit-img">
-                                            <img class="inline-block" src="assets/img/profiles/avatar-02.jpg" alt="user">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="col-form-label">Change Image <span class="text-danger">*</span></label>
-                                            <input class="form-control" type="file">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="col-form-label">Title</label>
-                                            <input class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="col-form-label">Price <span class="text-danger">*</span></label>
-                                            <input class="form-control" type="number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="col-form-label">Category <span class="text-danger">*</span> </label>
-                                            <select class="select form-control">
-                                                <option>Men Wear</option>
-                                                <option>Women Wear</option>
-                                                <option>Women Bag</option>
-                                                <option>Men Bag</option>
-                                                <option>Men Bag</option>
-                                                <option>Sneakers</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="col-form-label">Description <span class="text-danger">*</span></label>
-                                            <textarea class="form-control" name="description" id="description" cols="30" rows="4"></textarea>
+                                            <label class="col-form-label">Status <span class="text-danger">*</span> </label>
+                                            <select id="order_stat" name="order-status" class="select form-control">
+                                                <option value="Pending">Pending</option>
+                                                <option value="Processing">Processing</option>
+                                                <option value="Ready for Delivery">Ready For Delivery</option>
+                                                <option value="Delivered">Delivered</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="submit-section">
-                                    <button class="btn btn-primary submit-btn">Add</button>
+                                    <button class="btn btn-primary submit-btn update-order-stat">Update Status</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /Edit Client Modal -->
+            <!-- /Edit Order Modal -->
 
             <!-- Delete Client Modal -->
             <div class="modal custom-modal fade" id="delete_client" role="dialog">
@@ -387,6 +365,46 @@
 
     <!-- Custom JS -->
     <script src="assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.edit-order-main').on('click', function(e){
+                var edit_id = $(this).attr('edit-id');
+                $('#edit_order').modal('show');
+
+                $('.update-order-stat').attr('edit_id', edit_id);
+            }); 
+
+            $('.update-order-stat').on('click', function(e){
+                e.preventDefault();
+
+                var update_ref = $(this).attr('edit_id');
+                var order_status = document.getElementById('order_stat').value;
+                console.log(update_ref);
+                console.log(order_status);
+                
+                $.ajax({
+                    url: 'php/update-order-status.php',
+                    method: 'GET',
+                    data: {update_ref: update_ref, order_status: order_status},
+
+                    success: function(data){
+                        if(data === 'success'){
+                            alert('Order Status Updated successfully');
+                            window.location.reload(true);
+                        }else{
+                            alert (data);
+                        }
+                    },
+
+                    error: function(err){
+                        console.log(err);
+                    }
+                })
+                
+            })
+        })
+    </script>
 
 </body>
 
