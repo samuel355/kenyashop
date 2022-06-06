@@ -58,7 +58,7 @@
                                 <input type="checkbox" class="form-check-input width-auto" id="exampleCheck1">
                                 <label class="form-check-label">Remember me</label>
                             </div>
-                            <a class="lost-pass" href="account-password-recovery.php">Forgot password?</a>
+                            <a class="lost-pass" href="reset-password.php">Forgot password?</a>
                         </div>
                         <div class="button">
                             <button class="btn login-button" type="submit">Login</button>
